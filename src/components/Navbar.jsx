@@ -7,20 +7,26 @@ function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
 
+    const pathMatch = (route) => {
+        if(route === location.pathname) {
+            return true
+        }
+    }
+
     return (
       <footer className="navbar__container">
         <nav className="navbar__nav">
             <ul className="navbar__items">
                 <li className="navbar__item" onClick={() => navigate('/')}>
-                    <ExploreIcon fill="#2c2c2c" width="36px" height="36px"/>
+                    <ExploreIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px"/>
                     <p>Explore</p>
                 </li>
                 <li className="navbar__item">
-                    <OfferIcon fill="#2c2c2c" width="36px" height="36px" onClick={() => navigate('/offers')}/>
+                    <OfferIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/offers')}/>
                     <p>Offers</p>
                 </li>
                 <li className="navbar__item">
-                    <PersonOutlineIcon fill="#2c2c2c" width="36px" height="36px" onClick={() => navigate('/profile')}/>
+                    <PersonOutlineIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/profile')}/>
                     <p>Profile</p>
                 </li>
             </ul>
