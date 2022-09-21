@@ -5,9 +5,24 @@ import {ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutlineI
 
 function Navbar() {
     return (
-      <>
-      <h1>Navbar</h1>
-      </>
+      <footer className="navbar__container">
+        <nav className="navbar__nav">
+            <ul className="navbar__items">
+                <li className="navbar__item">
+                    <ExploreIcon fill="#2c2c2c" width="36px" height="36px"/>
+                    <p>Explore</p>
+                </li>
+                <li className="navbar__item">
+                    <OfferIcon fill="#2c2c2c" width="36px" height="36px"/>
+                    <p>Offers</p>
+                </li>
+                <li className="navbar__item">
+                    <PersonOutlineIcon fill="#2c2c2c" width="36px" height="36px"/>
+                    <p>Profile</p>
+                </li>
+            </ul>
+        </nav>
+      </footer>
     );
   }
   
