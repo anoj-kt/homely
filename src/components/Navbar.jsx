@@ -19,15 +19,27 @@ function Navbar() {
             <ul className="navbar__items">
                 <li className="navbar__item" onClick={() => navigate('/')}>
                     <ExploreIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px"/>
-                    <p>Explore</p>
+                    <p
+                    className={pathMatch('/')? "navbar__itemNameActive" : "navbar__itemName"}
+                    >
+                    Explore
+                    </p>
                 </li>
                 <li className="navbar__item">
-                    <OfferIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/offers')}/>
-                    <p>Offers</p>
+                    <OfferIcon fill={pathMatch('/offers')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/offers')}/>
+                    <p
+                    className={pathMatch('/offers')? "navbar__itemNameActive" : "navbar__itemName"}
+                    >
+                    Offers
+                    </p>
                 </li>
                 <li className="navbar__item">
-                    <PersonOutlineIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/profile')}/>
-                    <p>Profile</p>
+                    <PersonOutlineIcon fill={pathMatch('/profile')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/profile')}/>
+                    <p
+                    className={pathMatch('/profile')? "navbar__itemNameActive" : "navbar__itemName"}
+                    >
+                    Profile
+                    </p>
                 </li>
             </ul>
         </nav>
