@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
+import { db } from '../firebase.config';
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg';
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
@@ -21,6 +23,24 @@ function SignUp() {
     }))
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    console.log(process.env)
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      updateProfile(auth.currentUser, {
+        displayName: name
+      });
+
+      navigate('/');
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
     <div className="page__container">
@@ -28,7 +48,7 @@ function SignUp() {
         <p className="page__header">Welcome back!</p>
       </header>
 
-      <form>
+      <form onSubmit={onSubmit}>
         <input 
           type="text" 
           className="name__input"
@@ -67,9 +87,9 @@ function SignUp() {
         >
           Forgot Password
         </Link>
-        <div className="signIn__div">
-          <p className="signIn__text">Sign In</p>
-          <button className="signIn__button">
+        <div className="signUp__div">
+          <p className="signUp__text">Sign Up</p>
+          <button className="signUp__button">
             <ArrowRightIcon 
               fill="#ffffff"
               width="34px"
@@ -79,8 +99,8 @@ function SignUp() {
         </div>
       </form>
 
-      <Link to="/sign-up" className="signUpLink">
-        Sign Up instead
+      <Link to="/sign-in" className="signUpLink">
+        Sign In instead
       </Link>
     </div>
     </>
