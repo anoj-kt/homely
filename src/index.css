@@ -25,53 +25,7 @@ button {
   border: none;
 }
 
-/* =========================NAVBAR========================= */
-.navbar__container {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 85px;
-  background-color: #ffffff;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar__nav {
-  width: 100%;
-  margin-top: 0.75rem;
-  overflow-y: hidden;
-}
-
-.navbar__items {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.navbar__item {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.navbar__itemName,
-.navbar__itemNameActive {
-  margin-top: 0.25rem;
-  font-size: 14px;
-  font-weight: 600;
-  color: #8f8f8f;
-}
-.navbar__itemNameActive {
-  color: #2c2c2c;
-}
-
-
+/* =========================GENERAL========================= */
 .page__container,
 .offers,
 .profile,
@@ -122,6 +76,52 @@ button {
   }
 }
 
+/* =========================NAVBAR========================= */
+.navbar__container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 85px;
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__nav {
+  width: 100%;
+  margin-top: 0.75rem;
+  overflow-y: hidden;
+}
+
+.navbar__items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar__item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar__itemName,
+.navbar__itemNameActive {
+  margin-top: 0.25rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8f8f8f;
+}
+.navbar__itemNameActive {
+  color: #2c2c2c;
+}
+
 /* =========================SIGN IN========================= */
 .email__input {
   margin-bottom: 2rem;
@@ -135,5 +135,13 @@ button {
 .password__input {
   margin-bottom: 2rem;
   background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
+}
+
+.showPassword {
+  cursor: pointer;
+  position: absolute;
+  top: -4%;
+  right: 1%;
+  padding: 1rem;
 }
 

@@ -41,6 +41,12 @@ function SignIn() {
             value={password}
             onChange={onChange}
           />
+          <img 
+            src={visibilityIcon} 
+            alt="Show password" 
+            className="showPassword"
+            onClick={() => setShowPassword(prev => !prev)}
+          />
         </div>
       </form>
     </div>
