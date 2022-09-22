@@ -54,6 +54,16 @@ function SignIn() {
         >
           Forgot Password
         </Link>
+        <div className="signIn__div">
+          <p className="signIn__text">Sign In</p>
+          <button className="signIn__button">
+            <ArrowRightIcon 
+              fill="#ffffff"
+              width="34px"
+              height="34px"
+            />
+          </button>
+        </div>
       </form>
     </div>
     </>
