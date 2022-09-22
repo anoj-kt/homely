@@ -2,17 +2,24 @@ import { useState, useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
 
 function Profile() {
-  const [user, setUser] = useState({})
   const auth = getAuth();
+  const [user, setUser] = useState({})
+  const [formData, setFormData] = useState({
+    name: auth.currentUser.displayName,
+    email: auth.currentUser.email
+  });
 
-  useEffect(() => {
-    setUser(auth.currentUser)
-  }, [])
+  const logOut = () => {
 
+  }
+  
   return (
-    <>
-    {user? <h1>{user.displayName}</h1> : <h1>Not Logged In</h1> }
-    </>
+    <div className="profile">
+      <header className="profile__header">
+        <p className="page__header">My Profile</p>
+        <button type="button" className="logOut" onClick={logOut}>Log out</button>
+      </header>
+    </div>
   );
   }
   

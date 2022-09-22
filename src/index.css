@@ -26,6 +26,11 @@ button {
 }
 
 /* =========================GENERAL========================= */
+.page__header {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
 .page__container,
 .offers,
 .profile,
@@ -209,3 +214,26 @@ button {
   margin-bottom: 2rem;
   background: url('./assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat;
 }
+
+/* =========================PROFILE========================= */
+.profile {
+  margin-bottom: 10rem;
+}
+
+.profile__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logOut {
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #00cc66;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
