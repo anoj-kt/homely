@@ -6,7 +6,7 @@ import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, SetFormData] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
@@ -14,7 +14,11 @@ function SignIn() {
 
   const navigate = useNavigate();
 
-  const onChange = () => {};
+  const onChange = (e) => {
+    setFormData(prev => ({
+      ...prev, [e.target.id]:e.target.value
+    }))
+  };
 
   return (
     <>
