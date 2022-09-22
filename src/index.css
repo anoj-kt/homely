@@ -95,3 +95,45 @@ button {
   font-size: 2rem;
   font-weight: 800;
 }
+
+.input,
+.password__input,
+.email__input,
+.nameInput,
+.textarea {
+  box-shadow: rgba(0, 0, 0, 0.11);
+  border: none;
+  background: #ffffff;
+  border-radius: 3rem;
+  height: 3rem;
+  width: 100%;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 3rem;
+  font-size: 1rem;
+}
+@media (min-width: 1100px) {
+  .input,
+  .password__input,
+  .email__input,
+  .nameInput,
+  .textarea {
+    padding: 0 5rem;
+  }
+}
+
+/* =========================SIGN IN========================= */
+.email__input {
+  margin-bottom: 2rem;
+  background: url('./assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat;
+}
+
+.password__inputDiv {
+  position: relative;
+}
+
+.password__input {
+  margin-bottom: 2rem;
+  background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
+}
+
