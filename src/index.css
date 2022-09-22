@@ -145,3 +145,10 @@ button {
   padding: 1rem;
 }
 
+.forgotPasswordLink {
+  cursor: pointer;
+  color: #00cc66;
+  font-weight: 600;
+  text-align: right;
+}
+
