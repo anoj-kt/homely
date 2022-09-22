@@ -5,12 +5,24 @@ import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRig
 import visibilityIcon from '../assets/svg/visibilityIcon.svg';
 
 function SignIn() {
-    return (
-      <>
-      <h1>Sign In</h1>
-      </>
-    );
-  }
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, SetFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const navigate = useNavigate();
+
+  return (
+    <>
+    <div className="page__container">
+      <header>
+        <p className="page__header">Welcome back!</p>
+      </header>
+    </div>
+    </>
+  );
+}
   
   export default SignIn;
   

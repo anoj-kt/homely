@@ -70,3 +70,28 @@ button {
 .navbar__itemNameActive {
   color: #2c2c2c;
 }
+
+
+.page__container,
+.offers,
+.profile,
+.listingDetails,
+.category,
+.explore {
+  margin: 1rem;
+}
+@media (min-width: 1024px) {
+  .page__container,
+  .offers,
+  .profile,
+  .listingDetails,
+  .category,
+  .explore {
+    margin: 3rem;
+  }
+}
+
+.page__header {
+  font-size: 2rem;
+  font-weight: 800;
+}
