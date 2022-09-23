@@ -51,6 +51,12 @@ function Category() {
                     {params.categoryName === 'rent' ? ' rent' : ' sale'}
                 </p>
             </header>
+
+            {isLoading ? 
+            <BeatLoader/> 
+            : listings && listings.length > 0 ? 
+                <></> 
+                : <p>No listings found for {params.categoryName}</p>}
         </div>
     )
 }
