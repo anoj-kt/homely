@@ -237,3 +237,19 @@ button {
   border-radius: 1rem;
 }
 
+.profile__detailsDiv {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+.profile__text {
+  font-weight: 600;
+}
+
+.changeDetails {
+  cursor: pointer;
+  font-weight: 600;
+  color: #00cc66;
+}
+
