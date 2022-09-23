@@ -253,3 +253,41 @@ button {
   color: #00cc66;
 }
 
+.profile__card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+}
+
+.profile__name,
+.profile__email,
+.profile__address,
+.profile__addressActive,
+.profile__emailActive,
+.profile__nameActive {
+  all: unset;
+  margin: 0.3rem 0;
+  font-weight: 600;
+  width: 100%;
+}
+.profile__nameActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profile__email,
+.profile__address,
+.profile__addressActive,
+.profile__emailActive {
+  font-weight: 500;
+}
+.profile__emailActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+.profile__addressActive {
+  background-color: rgba(44, 44, 44, 0.1);
+}
+
+

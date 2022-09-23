@@ -22,7 +22,17 @@ function Profile() {
     auth.signOut()
     navigate('/')
   };
-  
+
+  const onSubmit = () => {
+
+  };
+
+  const onChange = (e) => {
+    setFormData(prev => ({
+      ...prev, [e.target.id]:e.target.value
+    }))
+  };
+
   return (
     <div className="profile">
       <header className="profile__header">
@@ -38,6 +48,26 @@ function Profile() {
           }}>
             {changeDetails ? 'save' : 'edit'}
           </p>
+        </div>
+        <div className="profile__card">
+          <form>
+            <input 
+              type="text"
+              id="name"
+              className={changeDetails ? "profile__nameActive" : "profile__name"}
+              disabled={!changeDetails}
+              value={name}
+              onChange={onChange}
+            />
+            <input 
+              type="email"
+              id="email"
+              className={changeDetails ? "profile__emailActive" : "profile__email"}
+              disabled={!changeDetails}
+              value={email}
+              onChange={onChange}
+            />
+          </form>
         </div>
       </main>
     </div>
