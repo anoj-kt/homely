@@ -7,9 +7,19 @@ import { db } from '../firebase.config'
 import googleIcon from '../assets/svg/googleIcon.svg'
 
 function OAuth () {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const onGoogleClick = () => {
+
+    }
+
     return (
-        <div>
-            OAUTH
+        <div className="socialLogin">
+            <p>Sign {location.pathname === "/sign-up"? "up" : "in"} with</p>
+            <button className="socialIcon__div" onClick={onGoogleClick}>
+                <img src={googleIcon} alt="google" className="socialIcon__img" />
+            </button>
         </div>
     )
 }
