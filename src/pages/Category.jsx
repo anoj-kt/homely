@@ -44,7 +44,14 @@ function Category() {
     })
 
     return (
-        <div>Category</div>
+        <div className="category">
+            <header>
+                <p className="page__header">
+                    Properties for 
+                    {params.categoryName === 'rent' ? ' rent' : ' sale'}
+                </p>
+            </header>
+        </div>
     )
 }
 
