@@ -16,12 +16,14 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path="/" element={<Explore/>}></Route>
-        <Route path="/offers" element={<Offers/>}></Route>
-        <Route path="/profile" element={<Profile/>}></Route>
-        <Route path="/sign-in" element={<SignIn/>}></Route>
-        <Route path="/sign-up" element={<SignUp/>}></Route>
-        <Route path="/forgot-password" element={<ForgotPassword/>}></Route>
+        <Route path="/" element={<Explore/>}/>
+        <Route path="/offers" element={<Offers/>}/>
+        <Route path="/profile" element={<PrivateRoute/>}>
+          <Route path="/profile" element={<Profile/>}/>
+        </Route>
+        <Route path="/sign-in" element={<SignIn/>}/>
+        <Route path="/sign-up" element={<SignUp/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
       </Routes>
       <Navbar/>
     </Router>
