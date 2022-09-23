@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDoc, query, where, orderBy, limit, startAfter } from 'firebase/firestore';
+import { collection, getDocs, query, where, orderBy, limit, startAfter } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import BeatLoader from 'react-spinners/BeatLoader';
 
@@ -24,24 +24,28 @@ function Category() {
                     limit(10)
                 )
 
-                const queriedItems = await getDoc(fullQuery)
+                const queriedItems = await getDocs(fullQuery)
                 
-                const listings = []
-
+                const allListings = []
+                    
                 queriedItems.forEach(doc => {
-                    return listings.push({
+                    console.log(doc.data)
+                    return allListings.push({
                         id: doc.id,
                         data: doc.data
                     })
                 });
 
-                setListings(listings)
+                setListings(allListings)
                 setIsLoading(false)
             } catch (error) {
+                console.log(error)
                 toast.error('Oops! Something went wrong!')
             }
         }
-    })
+
+        fetchListings()
+    }, [])
 
     return (
         <div className="category">
