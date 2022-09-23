@@ -15,9 +15,30 @@ function Category() {
     useEffect(() => {
         const fetchListings = async () => {
             try {
+                const listingRef = collection(db, 'listings')
+
+                const fullQuery = query(
+                    listingRef, 
+                    where('type', '==', params.categoryName), 
+                    orderBy('timestamp', 'desc'), 
+                    limit(10)
+                )
+
+                const queriedItems = await getDoc(fullQuery)
                 
+                const listings = []
+
+                queriedItems.forEach(doc => {
+                    return listings.push({
+                        id: doc.id,
+                        data: doc.data
+                    })
+                });
+
+                setListings(listings)
+                setIsLoading(false)
             } catch (error) {
-                
+                toast.error('Oops! Something went wrong!')
             }
         }
     })
