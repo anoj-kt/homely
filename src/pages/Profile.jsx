@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 
 function Profile() {
@@ -9,9 +10,14 @@ function Profile() {
     email: auth.currentUser.email
   });
 
-  const logOut = () => {
+  const {name, email} = formData;
 
-  }
+  const navigate = useNavigate();
+
+  const logOut = () => {
+    auth.signOut()
+    navigate('/')
+  };
   
   return (
     <div className="profile">
