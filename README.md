@@ -1,6 +1,12 @@
 # Housey (Project still under development)
 A platform to search or list properties for rent or sale
 
+## Tech/Framework used
+✅ ReactJS <br>
+✅ CSS <br>
+✅ Firebase 9 <br>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
