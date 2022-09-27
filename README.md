@@ -1,7 +1,7 @@
 # Housey (Project still under development)
 A platform to search or list properties for rent or sale
 
-## Tech/Framework used
+## Language/Framework used
 ✅ ReactJS <br>
 ✅ CSS <br>
 ✅ Firebase 9 <br>
