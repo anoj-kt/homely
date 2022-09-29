@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import BeatLoader from 'react-spinners/BeatLoader'; 
 
 function CreateListing() {
-    const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+    const [geolocationEnabled, setGeolocationEnabled] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         type: 'rent',
@@ -177,6 +177,33 @@ function CreateListing() {
                     required
                 />
             </form>
+            
+            {!geolocationEnabled && (
+                <div className="form__geoLocation flex">
+                    <div>
+                        <label className="form__label">Latitude</label>
+                        <input 
+                            className="form__inputSmall"
+                            type="number"
+                            id="latitude"
+                            value={latitude}
+                            onChange={onMutate}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label className="form__label">Longitude</label>
+                        <input 
+                            className="form__inputSmall"
+                            type="number"
+                            id="longitude"
+                            value={longitude}
+                            onChange={onMutate}
+                            required
+                        />
+                    </div>
+                </div>
+            )}
         </main>
     </div>
   )
