@@ -14,13 +14,15 @@ function CreateListing() {
         parking: false,
         furnished: false,
         address: '',
-        offerr: false,
+        offer: false,
         regularPrice: 0,
         discountedPrice: 0,
         images: {},
         latitude: 0,
         longitude: 0
     })
+
+    const { type, name, bedrooms, bathrooms, parking, furnished, address, offer, regularPrice, discountedPrice, images, latitude, longitude} = formData
 
     const auth = getAuth()
     const navigate = useNavigate()
