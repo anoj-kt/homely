@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import BeatLoader from 'react-spinners/BeatLoader'; 
 
 function CreateListing() {
-    const [geolocationEnabled, setGeolocationEnabled] = useState(false)
+    const [geolocationEnabled, setGeolocationEnabled] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         type: 'rent',
@@ -204,6 +204,29 @@ function CreateListing() {
                     </div>
                 </div>
             )}
+
+            <label className="form__label">Offer</label>
+            <div className="form__buttons">
+                <button
+                    type="button" 
+                    className={offer ? "form__buttonActive" : "form__button"}
+                    id="offer"
+                    value={true}
+                    onClick={onMutate}
+                >
+                    Yes
+                </button>
+                <button
+                    type="button" 
+                    className={!offer && offer !== null ? "form__buttonActive" : "form__button"}
+                    id="offer"
+                    value={false}
+                    onClick={onMutate}
+                >
+                    No
+                </button>
+            </div>
+
         </main>
     </div>
   )
