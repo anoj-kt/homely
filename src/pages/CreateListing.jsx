@@ -44,12 +44,49 @@ function CreateListing() {
         }
     }, [isMounted])
 
+    const onSubmit = (e) => {
+        e.preventdefault()
+    }
+
+    const onMutate = (e) => {
+      
+    }
+
     if(isLoading) {
         return <BeatLoader color="#00cc66"/>
     }
 
   return (
-    <div>CreateListing</div>
+    <div className="profile">
+        <header>
+            <p className="page__header">Create a listing</p>
+        </header>
+        <main>
+            <form onSubmit={onSubmit}>
+                <label className="form__label">Sell / Rent</label>
+                <div className="form__buttons">
+                    <button 
+                        type="button" 
+                        className={type === "sale" ? "form__buttonActive" : "form__button"}
+                        id="type"
+                        value="sale"
+                        onClick={onMutate}
+                    >
+                        Sell
+                    </button>
+                    <button 
+                        type="button" 
+                        className={type === "rent" ? "form__buttonActive" : "form__button"}
+                        id="type"
+                        value="rent"
+                        onClick={onMutate}
+                    >
+                        Rent
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
   )
 }
 

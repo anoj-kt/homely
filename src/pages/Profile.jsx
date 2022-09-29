@@ -87,7 +87,7 @@ function Profile() {
             />
           </form>
         </div>
-        <Link to="create-listing" className="create__listing">
+        <Link to="/create-listing" className="create__listing">
           <img src={homeIcon} alt="home" />
           <p>Sell or rent your home</p>
           <img src={arrowRight} alt="arrow right" />
