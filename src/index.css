@@ -419,3 +419,14 @@ button {
   display: flex;
   align-items: center;
 }
+
+.category__listingInfoDiv {
+  display: flex;
+  justify-content: space-between;
+  max-width: 275px;
+}
+
+.category__listingInfoText {
+  font-weight: 500;
+  font-size: 0.7rem;
+}
