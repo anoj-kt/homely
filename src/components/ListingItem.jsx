@@ -29,6 +29,13 @@ function ListingItem({listing, id}) {
                             : "1 Bedroom"
                         }
                     </p>
+                    <img src={bathtubIcon} alt="bathrooms" />
+                    <p className="category__listingInfoText">
+                        {listing.bathrooms > 1 
+                            ? `${listing.bathrooms} Bathrooms`
+                            : "1 Bathroom"
+                        }
+                    </p>
                 </div>
             </div>
         </Link>
