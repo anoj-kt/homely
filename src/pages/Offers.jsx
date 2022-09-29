@@ -20,7 +20,7 @@ function Offers() {
 
                 const fullQuery = query(
                     listingRef, 
-                    where('offer', '==', 'true'), 
+                    where('offer', '==', true), 
                     orderBy('timestamp', 'desc'), 
                     limit(10)
                 )
