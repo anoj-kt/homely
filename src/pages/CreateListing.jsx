@@ -226,6 +226,22 @@ function CreateListing() {
                     No
                 </button>
             </div>
+            <label className="form__label">Regular Price</label>
+            <div className="form__priceDiv">
+                <input 
+                    className="form__inputSmall"
+                    type="text" 
+                    id="regularPrice"
+                    value={regularPrice}
+                    onChange={onMutate}
+                    min="50"
+                    max="750000000"
+                    required
+                />
+                {type === "rent" && (
+                    <p className="form__priceText">€ per month</p>
+                )}
+            </div>
 
         </main>
     </div>

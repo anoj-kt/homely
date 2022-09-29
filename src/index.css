@@ -481,3 +481,13 @@ button {
 .flex {
   display: flex;
 }
+
+.form__priceDiv {
+  display: flex;
+  align-items: center;
+}
+
+.form__priceText {
+  margin-left: -1.5rem;
+  font-weight: 600;
+}
