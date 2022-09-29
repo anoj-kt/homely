@@ -445,4 +445,35 @@ button {
 }
 
 /* =========================CREATE LISTING========================= */
+.form__label {
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+}
+
+.form__buttons {
+  display: flex;
+}
+
+.form__button,
+.form__input,
+.form__inputAddress,
+.form__inputName,
+.form__inputSmall,
+.form__inputFile,
+.form__buttonActive {
+  padding: 0.9rem 3rem;
+  background-color: #ffffff;
+  font-weight: 600;
+  border-radius: 1rem;
+  font-size: 1rem;
+  margin: 0.5rem 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form__buttonActive {
+  background-color: #00cc66;
+  color: #ffffff;
+}
 
