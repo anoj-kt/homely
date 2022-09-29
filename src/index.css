@@ -315,6 +315,19 @@ button {
   background-color: rgba(44, 44, 44, 0.1);
 }
 
+.create__listing {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  font-weight: 600;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* =========================EXPLORE========================= */
 @media (min-width: 1217px) {
   .explore {
@@ -430,3 +443,6 @@ button {
   font-weight: 500;
   font-size: 0.7rem;
 }
+
+/* =========================CREATE LISTING========================= */
+

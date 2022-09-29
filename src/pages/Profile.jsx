@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { updateDoc, doc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
@@ -87,6 +87,11 @@ function Profile() {
             />
           </form>
         </div>
+        <Link to="create-listing" className="create__listing">
+          <img src={homeIcon} alt="home" />
+          <p>Sell or rent your home</p>
+          <img src={arrowRight} alt="arrow right" />
+        </Link>
       </main>
     </div>
   );
