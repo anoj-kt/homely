@@ -176,7 +176,7 @@ function CreateListing() {
                     onChange={onMutate}
                     required
                 />
-            </form>
+            
             
             {!geolocationEnabled && (
                 <div className="form__geoLocation flex">
@@ -271,7 +271,7 @@ function CreateListing() {
                 multiple
                 required
             />
-
+            </form>
         </main>
     </div>
   )
