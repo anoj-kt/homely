@@ -145,6 +145,28 @@ function CreateListing() {
                         No
                     </button>
                 </div>
+                <label className="form__label">Furnished</label>
+                <div className="form__buttons">
+                    <button 
+                        type="button" 
+                        className={furnished ? "form__buttonActive" : "form__button"}
+                        id="furnished"
+                        value={true}
+                        onClick={onMutate}
+
+                    >
+                        Yes
+                    </button>
+                    <button 
+                        type="button" 
+                        className={!furnished && furnished !== null? "form__buttonActive" : "form__button"}
+                        id="furnished"
+                        value={false}
+                        onClick={onMutate}
+                    >
+                        No
+                    </button>
+                </div>
             </form>
         </main>
     </div>
