@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import BeatLoader from 'react-spinners/BeatLoader'; 
-// color="#00cc66"
 
 function CreateListing() {
     const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         type: 'rent',
         name: '',
@@ -41,6 +41,10 @@ function CreateListing() {
             isMounted.current = false
         }
     }, [isMounted])
+
+    if(isLoading) {
+        return <BeatLoader color="#00cc66"/>
+    }
 
   return (
     <div>CreateListing</div>
