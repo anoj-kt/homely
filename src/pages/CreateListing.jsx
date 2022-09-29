@@ -242,6 +242,22 @@ function CreateListing() {
                     <p className="form__priceText">€ per month</p>
                 )}
             </div>
+            
+            {offer && (
+                <>
+                    <label className="form__label">Discounted Price</label>
+                    <input
+                        className="form__inputSmall"
+                        type="text" 
+                        id="discountedPrice"
+                        value={discountedPrice}
+                        onChange={onMutate}
+                        min="50"
+                        max="750000000"
+                        required
+                    />
+                </>
+            )}
 
         </main>
     </div>
