@@ -259,6 +259,19 @@ function CreateListing() {
                 </>
             )}
 
+            <label className="form__label">Images</label> 
+            <p className="imagesInfo">The first image will be the cover (max 6).</p>
+            <input 
+                className="form__inputFile"
+                type="file" 
+                id="images"
+                onChange={onMutate}
+                max="6"
+                accept=".jpg, .jpeg, .png"
+                multiple
+                required
+            />
+
         </main>
     </div>
   )

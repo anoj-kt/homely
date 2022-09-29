@@ -491,3 +491,21 @@ button {
   margin-left: -1.5rem;
   font-weight: 600;
 }
+
+.imagesInfo {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.form__inputFile {
+  width: 100%;
+}
+.form__inputFile::-webkit-file-upload-button {
+  background-color: #00cc66;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
