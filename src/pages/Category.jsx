@@ -57,7 +57,7 @@ function Category() {
             </header>
 
             {isLoading ? 
-            <BeatLoader/> 
+            <BeatLoader color="#00cc66"/> 
             : listings && listings.length > 0 ? 
                 <>
                 <main>
