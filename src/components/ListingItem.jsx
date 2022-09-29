@@ -19,8 +19,17 @@ function ListingItem({listing, id}) {
                             .toLocaleString("de-DE")
                         : listing.regularPrice
                             .toLocaleString("de-DE")}
-                    €
+                    € {listing.type === "rent" && " per month"}
                 </p>
+                <div className="category__listingInfoDiv">
+                    <img src={bedIcon} alt="bedrooms" />
+                    <p className="category__listingInfoText">
+                        {listing.bedrooms > 1 
+                            ? `${listing.bedrooms} Bedrooms`
+                            : "1 Bedroom"
+                        }
+                    </p>
+                </div>
             </div>
         </Link>
     </li>
