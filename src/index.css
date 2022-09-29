@@ -315,4 +315,118 @@ button {
   background-color: rgba(44, 44, 44, 0.1);
 }
 
+/* =========================EXPLORE========================= */
+@media (min-width: 1217px) {
+  .explore {
+    margin-bottom: 10rem;
+  }
+}
+@media (max-height: 536) {
+  .explore {
+    margin-bottom: 10rem;
+  }
+}
 
+.explore__heading,
+.explore__categoryHeading {
+  font-weight: 700;
+}
+
+.explore__categoryHeading {
+  margin-top: 3rem;
+}
+
+.explore__categories {
+  display: flex;
+  justify-content: space-between;
+}
+.explore__categories a {
+  width: 48%;
+}
+
+.explore__categoryImg {
+  min-height: 115px;
+  height: 15vw;
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.explore__categoryName {
+  font-weight: 500;
+  text-align: left;
+}
+
+/* =========================CATEGORY LISTINGS========================= */
+.category__listings {
+  padding: 0;
+}
+
+.category__listing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.category__listingLink {
+  display: contents;
+}
+
+.category__listingImg {
+  width: 30%;
+  height: 100px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .category__listingImg {
+    width: 19%;
+    height: 217px;
+  }
+}
+
+.category__listingDetails {
+  width: 65%;
+}
+@media (min-width: 1024px) {
+  .category__listingDetails {
+    width: 79%;
+  }
+}
+
+.category__listingLocation {
+  font-weight: 600;
+  font-size: 0.7rem;
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+.category__listingName {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.category__listingPrice {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #00cc66;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.category__listingInfoDiv {
+  display: flex;
+  justify-content: space-between;
+  max-width: 275px;
+}
+
+.category__listingInfoText {
+  font-weight: 500;
+  font-size: 0.7rem;
+}

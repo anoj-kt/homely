@@ -7,7 +7,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import { db } from '../firebase.config';
 import ListingItem from '../components/ListingItem';
 
-function Offers() {
+function Category() {
     const [listings, setListings] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -20,7 +20,7 @@ function Offers() {
 
                 const fullQuery = query(
                     listingRef, 
-                    where('offer', '==', true), 
+                    where('type', '==', params.categoryName), 
                     orderBy('timestamp', 'desc'), 
                     limit(10)
                 )
@@ -45,12 +45,15 @@ function Offers() {
         }
 
         fetchListings()
-    }, [])
+    }, [params.categoryName])
 
     return (
         <div className="category">
             <header>
-                <p className="page__header">Offers</p>
+                <p className="page__header">
+                    Properties for 
+                    {params.categoryName === 'rent' ? ' rent' : ' sale'}
+                </p>
             </header>
 
             {isLoading ? 
@@ -65,9 +68,9 @@ function Offers() {
                     </ul>
                 </main>
                 </> 
-                : <p>Unfortunately we don't have any current offers!</p>}
+                : <p>No listings found for {params.categoryName}</p>}
         </div>
     )
 }
 
-export default Offers
+export default Category
