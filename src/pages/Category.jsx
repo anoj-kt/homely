@@ -29,10 +29,9 @@ function Category() {
                 const allListings = []
                     
                 queriedItems.forEach(doc => {
-                    console.log(doc.data)
                     return allListings.push({
                         id: doc.id,
-                        data: doc.data
+                        data: doc.data()
                     })
                 });
 
@@ -59,7 +58,15 @@ function Category() {
             {isLoading ? 
             <BeatLoader/> 
             : listings && listings.length > 0 ? 
-                <></> 
+                <>
+                <main>
+                    <ul className="category__listings">
+                        {listings.map(listing => (
+                            <h3>{listing.data.name}</h3>
+                        ))}
+                    </ul>
+                </main>
+                </> 
                 : <p>No listings found for {params.categoryName}</p>}
         </div>
     )

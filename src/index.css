@@ -357,3 +357,33 @@ button {
   font-weight: 500;
   text-align: left;
 }
+
+/* =========================CATEGORY LISTINGS========================= */
+.category__listings {
+  padding: 0;
+}
+
+.category__listing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.category__listingLink {
+  display: contents;
+}
+
+.category__listingImg {
+  width: 30%;
+  height: 100px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .category__listingImg {
+    width: 19%;
+    height: 217px;
+  }
+}
