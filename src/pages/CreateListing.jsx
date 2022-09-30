@@ -49,7 +49,29 @@ function CreateListing() {
     }
 
     const onMutate = (e) => {
-      
+      let boolean = null;
+
+      if(e.target.value === 'true') {
+        boolean = true
+      }
+
+      if(e.target.value === 'false') {
+        boolean = false
+      }
+
+      if(e.target.files) {
+        setFormData(prev => ({
+            ...prev, 
+            images: e.target.files
+        }))
+      }
+
+      if(!e.target.files) {
+        setFormData(prev => ({
+            ...prev, 
+            [e.target.id]: boolean ?? e.target.value
+        }))
+      }
     }
 
     if(isLoading) {
