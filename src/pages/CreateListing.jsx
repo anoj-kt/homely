@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import BeatLoader from 'react-spinners/BeatLoader'; 
 
 function CreateListing() {
+    // ===========STATE===========
     const [geolocationEnabled, setGeolocationEnabled] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
@@ -24,6 +25,7 @@ function CreateListing() {
 
     const { type, name, bedrooms, bathrooms, parking, furnished, address, offer, regularPrice, discountedPrice, images, latitude, longitude} = formData
 
+    // ===========VARIABLES===========
     const auth = getAuth()
     const navigate = useNavigate()
     const isMounted = useRef(true)
@@ -44,6 +46,7 @@ function CreateListing() {
         }
     }, [isMounted])
 
+    // ===========EVENT HANDLERS===========
     const onSubmit = (e) => {
         e.preventdefault()
     }
@@ -85,6 +88,8 @@ function CreateListing() {
         </header>
         <main>
             <form onSubmit={onSubmit}>
+
+            {/* ===========Sell / Rent=========== */}
                 <label className="form__label">Sell / Rent</label>
                 <div className="form__buttons">
                     <button 
@@ -106,6 +111,8 @@ function CreateListing() {
                         Rent
                     </button>
                 </div>
+
+                {/* ===========Name=========== */}
                 <label className="form__label">Name</label>
                 <input 
                     className="form__inputName"
@@ -117,6 +124,8 @@ function CreateListing() {
                     minLength="10"
                     required
                 />
+
+                {/* ===========Rooms=========== */}
                 <div className="form__rooms flex">
                     <div>
                         <label className="form__label">Bedrooms</label>
@@ -145,6 +154,8 @@ function CreateListing() {
                         />
                     </div>
                 </div>
+
+                {/* ===========Parking=========== */}
                 <label className="form__label">Parking available</label>
                 <div className="form__buttons">
                     <button 
@@ -167,6 +178,8 @@ function CreateListing() {
                         No
                     </button>
                 </div>
+
+                {/* ===========Furnished=========== */}
                 <label className="form__label">Furnished</label>
                 <div className="form__buttons">
                     <button 
@@ -189,6 +202,8 @@ function CreateListing() {
                         No
                     </button>
                 </div>
+
+                {/* ===========Address=========== */}
                 <label className="form__label">Address</label>
                 <textarea
                     className="form__inputAddress"
@@ -199,103 +214,111 @@ function CreateListing() {
                     required
                 />
             
-            
-            {!geolocationEnabled && (
-                <div className="form__geoLocation flex">
-                    <div>
-                        <label className="form__label">Latitude</label>
-                        <input 
-                            className="form__inputSmall"
-                            type="number"
-                            id="latitude"
-                            value={latitude}
-                            onChange={onMutate}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label className="form__label">Longitude</label>
-                        <input 
-                            className="form__inputSmall"
-                            type="number"
-                            id="longitude"
-                            value={longitude}
-                            onChange={onMutate}
-                            required
-                        />
-                    </div>
-                </div>
-            )}
+                {/* ===========Furnished=========== */}
 
-            <label className="form__label">Offer</label>
-            <div className="form__buttons">
-                <button
-                    type="button" 
-                    className={offer ? "form__buttonActive" : "form__button"}
-                    id="offer"
-                    value={true}
-                    onClick={onMutate}
-                >
-                    Yes
-                </button>
-                <button
-                    type="button" 
-                    className={!offer && offer !== null ? "form__buttonActive" : "form__button"}
-                    id="offer"
-                    value={false}
-                    onClick={onMutate}
-                >
-                    No
-                </button>
-            </div>
-            <label className="form__label">Regular Price</label>
-            <div className="form__priceDiv">
-                <input 
-                    className="form__inputSmall"
-                    type="text" 
-                    id="regularPrice"
-                    value={regularPrice}
-                    onChange={onMutate}
-                    min="50"
-                    max="750000000"
-                    required
-                />
-                {type === "rent" && (
-                    <p className="form__priceText">€ per month</p>
+                {!geolocationEnabled && (
+                    <div className="form__geoLocation flex">
+                        <div>
+                            <label className="form__label">Latitude</label>
+                            <input 
+                                className="form__inputSmall"
+                                type="number"
+                                id="latitude"
+                                value={latitude}
+                                onChange={onMutate}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className="form__label">Longitude</label>
+                            <input 
+                                className="form__inputSmall"
+                                type="number"
+                                id="longitude"
+                                value={longitude}
+                                onChange={onMutate}
+                                required
+                            />
+                        </div>
+                    </div>
                 )}
-            </div>
-            
-            {offer && (
-                <>
-                    <label className="form__label">Discounted Price</label>
-                    <input
+
+                {/* ===========Offer=========== */}
+                <label className="form__label">Offer</label>
+                <div className="form__buttons">
+                    <button
+                        type="button" 
+                        className={offer ? "form__buttonActive" : "form__button"}
+                        id="offer"
+                        value={true}
+                        onClick={onMutate}
+                    >
+                        Yes
+                    </button>
+                    <button
+                        type="button" 
+                        className={!offer && offer !== null ? "form__buttonActive" : "form__button"}
+                        id="offer"
+                        value={false}
+                        onClick={onMutate}
+                    >
+                        No
+                    </button>
+                </div>
+
+                {/* ===========Regular Price=========== */}
+                <label className="form__label">Regular Price</label>
+                <div className="form__priceDiv">
+                    <input 
                         className="form__inputSmall"
                         type="text" 
-                        id="discountedPrice"
-                        value={discountedPrice}
+                        id="regularPrice"
+                        value={regularPrice}
                         onChange={onMutate}
                         min="50"
                         max="750000000"
                         required
                     />
-                </>
-            )}
+                    {type === "rent" && (
+                        <p className="form__priceText">€ per month</p>
+                    )}
+                </div>
+                
+                {/* ===========Discounted Price=========== */}
+                {offer && (
+                    <>
+                        <label className="form__label">Discounted Price</label>
+                        <input
+                            className="form__inputSmall"
+                            type="text" 
+                            id="discountedPrice"
+                            value={discountedPrice}
+                            onChange={onMutate}
+                            min="50"
+                            max="750000000"
+                            required
+                        />
+                    </>
+                )}
 
-            <label className="form__label">Images</label> 
-            <p className="imagesInfo">The first image will be the cover (max 6).</p>
-            <input 
-                className="form__inputFile"
-                type="file" 
-                id="images"
-                onChange={onMutate}
-                max="6"
-                accept=".jpg, .jpeg, .png"
-                multiple
-                required
-            />
-            <button className="primaryButton createListingButton" type="submit">
-                Create Listing
-            </button>
+                {/* ===========Images=========== */}
+                <label className="form__label">Images</label> 
+                <p className="imagesInfo">The first image will be the cover (max 6).</p>
+                <input 
+                    className="form__inputFile"
+                    type="file" 
+                    id="images"
+                    onChange={onMutate}
+                    max="6"
+                    accept=".jpg, .jpeg, .png"
+                    multiple
+                    required
+                />
+
+                {/* ===========Create listing button=========== */}
+                <button className="primaryButton createListingButton" type="submit">
+                    Create Listing
+                </button>
             </form>
         </main>
     </div>
