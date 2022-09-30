@@ -81,6 +81,21 @@ button {
   }
 }
 
+.primaryButton {
+  cursor: pointer;
+  background: #00cc66;
+  border-radius: 1rem;
+  padding: 0.85rem 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* =========================NAVBAR========================= */
 .navbar__container {
   position: fixed;
@@ -508,4 +523,8 @@ button {
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
   margin-right: 1rem;
+}
+
+.createListingButton {
+  margin-top: 5rem;
 }
