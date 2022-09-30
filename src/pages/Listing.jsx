@@ -6,19 +6,35 @@ import { BeatLoader } from 'react-spinners/BeatLoader';
 
 import { db } from '../firebase.config';
 import shareIcon from '../assets/svg/shareIcon.svg'
+import { async } from '@firebase/util';
 
 function Listing() {
     const [listing, setListing] = useState(null)
-    const [isLoading, setIsLoading] = useState(null)
-    const [shareLinkCopied, setShareLinkCopied] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [shareLinkCopied, setShareLinkCopied] = useState(false)
 
     const navigate = useNavigate()
     const params = useParams()
     const auth = getAuth()
 
-  return (
-    <div>Listing</div>
-  )
+    useEffect(() => {
+        const fetchListing = async () => {
+            const docRef = doc(db, 'listings', params.listing.Id)
+            const selectedDoc = await getDoc(docRef)
+
+            if(selectedDoc.exists()) {
+                setListing(selectedDoc.data())
+                setIsLoading(false)
+            }
+
+        }
+
+        fetchListing()
+    }, [navigate, params.listingId])
+
+    return (
+        <div>Listing</div>
+    )
 }
 
 export default Listing
