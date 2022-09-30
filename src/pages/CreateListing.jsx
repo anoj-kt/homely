@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { toast } from 'react-toastify'
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { toast } from 'react-toastify';
 import BeatLoader from 'react-spinners/BeatLoader'; 
+import { v4 as uuidv4 } from 'uuid';
+
+import { db } from '../firebase.config'
 
 function CreateListing() {
     // ===========STATE===========
