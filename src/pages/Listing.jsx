@@ -19,7 +19,7 @@ function Listing() {
 
     useEffect(() => {
         const fetchListing = async () => {
-            const docRef = doc(db, 'listings', params.listing.Id)
+            const docRef = doc(db, 'listings', params.listingId)
             const selectedDoc = await getDoc(docRef)
 
             if(selectedDoc.exists()) {
