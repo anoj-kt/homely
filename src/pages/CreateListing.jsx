@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import BeatLoader from 'react-spinners/BeatLoader'; 
 import { v4 as uuidv4 } from 'uuid';
@@ -68,6 +69,7 @@ function CreateListing() {
             toast.error('You can only upload upto 6 images')
         }
 
+        // ===========Geo location===========
         let geoLocation = {}
         let location
 
@@ -92,9 +94,9 @@ function CreateListing() {
         } else {
             geoLocation.lat = latitude
             geoLocation.lng = longitude
-            location = address
         }
 
+        // ===========Store images===========
         const storeImage = async (image) => {
             return new Promise((resolve, reject) => {
                 const storage = getStorage()
@@ -130,13 +132,31 @@ function CreateListing() {
 
         const imageUrls = await Promise.all(
             [...images].map(img => storeImage(img))
-        ).catch(() => {
+        ).catch((error) => {
+            console.log(error)
             setIsLoading(false)
             toast.error('Images could not be uploaded')
             return
         })
 
+        // ===========Send all data to firestore===========
+        const formDataCopy = {
+            ...formData,
+            imageUrls,
+            geoLocation,
+            timestamp: serverTimestamp()
+        }
+
+        formDataCopy.location = address
+        delete formDataCopy.images
+        delete formDataCopy.address
+        !formDataCopy.offer && delete formDataCopy.discountedPrice
+
+        const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+
         setIsLoading(false)
+        toast.success('Listing has been uploaded!')
+        navigate(`/category/${formDataCopy.type}/${docRef.id}`)
     }
 
     const onMutate = (e) => {
