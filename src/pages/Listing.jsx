@@ -33,7 +33,11 @@ function Listing() {
     }, [navigate, params.listingId])
 
     return (
-        <div>Listing</div>
+       <main>
+        <div className="icon__share">
+            <img src={shareIcon} alt="share" />
+        </div>
+       </main>
     )
 }
 
