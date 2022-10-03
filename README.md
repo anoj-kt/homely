@@ -2,10 +2,9 @@
 A platform to search or list properties for rent or sale.
 
 ## Language/Framework used
-✅ ReactJS <br>
-✅ CSS <br>
-✅ Firebase 9 <br>
-
+![React JS](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) <br>
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) <br>
+![Firebase 9](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
 # Getting Started with Create React App
 
