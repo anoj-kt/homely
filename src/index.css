@@ -34,7 +34,7 @@ button {
 .page__container,
 .offers,
 .profile,
-.listingDetails,
+.listing__details,
 .category,
 .explore {
   margin: 1rem;
@@ -43,7 +43,7 @@ button {
   .page__container,
   .offers,
   .profile,
-  .listingDetails,
+  .listing__details,
   .category,
   .explore {
     margin: 3rem;
@@ -555,4 +555,20 @@ button {
   padding: 0.5rem 1rem;
   font-weight: 600;
 }
+
+.listing__details {
+  margin-bottom: 10rem;
+}
+
+.listing__name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.listing__location {
+  margin-top: 0;
+  font-weight: 600;
+}
+
 
