@@ -610,3 +610,30 @@ button {
 
 
 
+.contact__owner {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.owner__name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.message__form {
+  margin-top: 0.5rem;
+}
+
+.message {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.message__label {
+  margin-bottom: 0.5rem;
+}
+
+

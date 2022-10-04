@@ -50,10 +50,13 @@ function Contact() {
                                 name="message" 
                                 id="message" 
                                 value={message}
-                                className="message__textarea"
+                                className="textarea"
                                 onChange={onChange}
                             ></textarea>
                         </div>
+                        <a href={`mailto:${owner.email}?Subject=${searchParams.get('listingName')}&body${message}`}>
+                            <button type="button" className="primaryButton">Send Message</button>
+                        </a>
                     </form>
                 </main>
             )}
