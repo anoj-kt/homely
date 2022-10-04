@@ -528,3 +528,19 @@ button {
 .createListingButton {
   margin-top: 5rem;
 }
+
+/* =========================EACH FETCHED LISTING========================= */
+.icon__share {
+  cursor: pointer;
+  position: fixed;
+  top: 3%;
+  right: 5%;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
