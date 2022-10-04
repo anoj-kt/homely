@@ -566,6 +566,18 @@ button {
   margin-bottom: 0.5rem;
 }
 
+.leaflet__container {
+  width: 100%;
+  height: 200px;
+  overflow-x: hidden;
+  margin-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .leaflet__container {
+    height: 400px;
+  }
+}
+
 .listing__location {
   margin-top: 0;
   font-weight: 600;
@@ -609,7 +621,7 @@ button {
 }
 
 
-
+/* =========================CONTACT PAGE========================= */
 .contact__owner {
   margin-top: 2rem;
   display: flex;
