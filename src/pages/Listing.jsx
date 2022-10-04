@@ -34,7 +34,13 @@ function Listing() {
 
     return (
        <main>
-        <div className="icon__share">
+        <div className="icon__share" onClick={() => {
+            navigator.clipboard.writeText(window.location.href)
+            setShareLinkCopied(true)
+            setTimeout(() => {
+                setShareLinkCopied(false)
+            }, 2000);
+        }}>
             <img src={shareIcon} alt="share" />
         </div>
        </main>
