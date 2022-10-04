@@ -29,7 +29,19 @@ function Contact() {
     }, [params.ownerId])
 
   return (
-    <div>Contact</div>
+    <div className="page__container">
+        <header>
+            <p className="page__header">Contact Owner</p>
+        </header>
+
+        {owner !== null && (
+            <main>
+                <div className="contact__owner">
+                    <p className="owner__name">{owner.name}</p>
+                </div>
+            </main>
+        )}
+    </div>
   )
 }
 
