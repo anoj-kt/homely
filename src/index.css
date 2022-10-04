@@ -602,5 +602,11 @@ button {
   opacity: 0.8;
 }
 
+.listing__location-title {
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
 
 

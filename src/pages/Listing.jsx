@@ -7,6 +7,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import { db } from '../firebase.config';
 import shareIcon from '../assets/svg/shareIcon.svg'
 import { async } from '@firebase/util';
+import { connectStorageEmulator } from 'firebase/storage';
 
 function Listing() {
     const [listing, setListing] = useState(null)
@@ -36,6 +37,7 @@ function Listing() {
         return <BeatLoader color="#00cc66"/>
     }
 
+    console.log(listing)
     return (
        <main>
         <div className="icon__share" onClick={() => {
@@ -54,9 +56,11 @@ function Listing() {
             <p className="listing__name">{listing.name}</p>
             <p className="listing__location">{listing.location}</p>
             <p className="listing__type">For {listing.type === "rent" ? "rent" : "sale"}</p>
+
             {listing.offer && (
                 <p className="price__discount">{(listing.regularPrice - listing.discountedPrice).toLocaleString("de-DE")}€ discount</p>
             )}
+
             <ul className="listing__details-list">
                 <li>
                     {listing.bedrooms > 1
@@ -73,6 +77,13 @@ function Listing() {
                 <li>{listing.parking && 'Parking available'}</li>
                 <li>{listing.furnished && 'Furnished property'}</li>
             </ul>
+
+            <p className="listing__location-title">Location</p>
+
+            {auth.currentUser?.uid !== listing.userRef && (
+                <Link to={`/contact/${listing.userRef}?listingName=${listing.name}&listingLocation=${listing.location}`} className="primaryButton">Contact Owner</Link>
+            )}
+            
         </div>
        </main>
     )
