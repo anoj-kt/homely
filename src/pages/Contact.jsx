@@ -28,35 +28,37 @@ function Contact() {
 
     }, [params.ownerId])
 
-    
+    const onChange = (e) => {
+        setMessage(e.target.value)
+    }
 
-  return (
-    <div className="page__container">
-        <header>
-            <p className="page__header">Contact Owner</p>
-        </header>
+    return (
+        <div className="page__container">
+            <header>
+                <p className="page__header">Contact Owner</p>
+            </header>
 
-        {owner !== null && (
-            <main>
-                <div className="contact__owner">
-                    <p className="owner__name">{owner.name}</p>
-                </div>
-                <form className="message__form">
-                    <div className="message">
-                        <label className="message__label">Message</label>
-                        <textarea 
-                            name="message" 
-                            id="message" 
-                            value={message}
-                            className="message__textarea"
-                            onChange={onChange}
-                        ></textarea>
+            {owner !== null && (
+                <main>
+                    <div className="contact__owner">
+                        <p className="owner__name">{owner.name}</p>
                     </div>
-                </form>
-            </main>
-        )}
-    </div>
-  )
+                    <form className="message__form">
+                        <div className="message">
+                            <label className="message__label">Message</label>
+                            <textarea 
+                                name="message" 
+                                id="message" 
+                                value={message}
+                                className="message__textarea"
+                                onChange={onChange}
+                            ></textarea>
+                        </div>
+                    </form>
+                </main>
+            )}
+        </div>
+    )
 }
 
 export default Contact
