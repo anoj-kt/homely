@@ -544,3 +544,15 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.link--copied {
+  position: fixed;
+  top: 9%;
+  right: 5%;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+

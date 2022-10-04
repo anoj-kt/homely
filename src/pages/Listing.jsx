@@ -43,6 +43,7 @@ function Listing() {
         }}>
             <img src={shareIcon} alt="share" />
         </div>
+        {shareLinkCopied && <p className="link--copied">Link copied!</p>}
        </main>
     )
 }
