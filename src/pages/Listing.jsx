@@ -53,6 +53,10 @@ function Listing() {
         <div className="listing__details">
             <p className="listing__name">{listing.name}</p>
             <p className="listing__location">{listing.location}</p>
+            <p className="listing__type">For {listing.type === "rent" ? "rent" : "sale"}</p>
+            {listing.offer && (
+                <p className="price__discount">{(listing.regularPrice - listing.discountedPrice).toLocaleString("de-DE")}€ discount</p>
+            )}
         </div>
        </main>
     )
