@@ -81,7 +81,7 @@ function Listing() {
             <p className="listing__location-title">Location</p>
 
             {auth.currentUser?.uid !== listing.userRef && (
-                <Link to={`/contact/${listing.userRef}?listingName=${listing.name}&listingLocation=${listing.location}`} className="primaryButton">Contact Owner</Link>
+                <Link to={`/contact/${listing.userRef}?listingName=${listing.name}`} className="primaryButton">Contact Owner</Link>
             )}
             
         </div>
