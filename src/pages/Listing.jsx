@@ -57,6 +57,22 @@ function Listing() {
             {listing.offer && (
                 <p className="price__discount">{(listing.regularPrice - listing.discountedPrice).toLocaleString("de-DE")}€ discount</p>
             )}
+            <ul className="listing__details-list">
+                <li>
+                    {listing.bedrooms > 1
+                        ? `${listing.bedrooms} Bedrooms`
+                        : "1 Bedroom"
+                    }
+                </li>
+                <li>
+                    {listing.bathrooms > 1
+                        ? `${listing.bathrooms} Bathrooms`
+                        : "1 Bathroom"
+                    }
+                </li>
+                <li>{listing.parking && 'Parking available'}</li>
+                <li>{listing.furnished && 'Furnished property'}</li>
+            </ul>
         </div>
        </main>
     )
