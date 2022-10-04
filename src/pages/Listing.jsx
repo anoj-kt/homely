@@ -43,7 +43,6 @@ function Listing() {
         return <BeatLoader color="#00cc66"/>
     }
 
-    console.log(listing)
     return (
        <main>
         <Swiper slidesPerView={1} pagination={{clickable:true}}>
