@@ -34,7 +34,7 @@ button {
 .page__container,
 .offers,
 .profile,
-.listingDetails,
+.listing__details,
 .category,
 .explore {
   margin: 1rem;
@@ -43,7 +43,7 @@ button {
   .page__container,
   .offers,
   .profile,
-  .listingDetails,
+  .listing__details,
   .category,
   .explore {
     margin: 3rem;
@@ -528,3 +528,179 @@ button {
 .createListingButton {
   margin-top: 5rem;
 }
+
+/* =========================EACH FETCHED LISTING========================= */
+.swiper {
+  min-height: 225px;
+  height: 23vw;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff !important;
+}
+
+.swiper__slide {
+  position: relative;
+  background-color: #00cc66;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper__slide-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper__slide-text {
+  color: #ffffff;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  font-weight: 600;
+  max-width: 90%;
+  font-size: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .swiper__slide-text {
+    font-size: 1.75rem;
+  }
+}
+
+.swiper__slide-price {
+  color: #000000;
+  position: absolute;
+  top: 143px;
+  left: 11px;
+  font-weight: 600;
+  max-width: 90%;
+  background-color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+}
+@media (min-width: 1024px) {
+  .swiper__slide-price {
+    font-size: 1.25rem;
+  }
+}
+
+.icon__share {
+  cursor: pointer;
+  position: fixed;
+  top: 3%;
+  right: 5%;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link--copied {
+  position: fixed;
+  top: 9%;
+  right: 5%;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.listing__details {
+  margin-bottom: 10rem;
+}
+
+.listing__name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.leaflet__container {
+  width: 100%;
+  height: 200px;
+  overflow-x: hidden;
+  margin-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .leaflet__container {
+    height: 400px;
+  }
+}
+
+.listing__location {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.listing__type {
+  padding: 0.25rem 0.5rem;
+  background-color: #00cc66;
+  color: #ffffff;
+  border-radius: 2rem;
+  display: inline;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+
+.price__discount {
+  padding: 0.25rem 0.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline;
+}
+
+.listing__details-list {
+  padding: 0;
+  list-style-type: none;
+}
+.listing__details-list li {
+  margin: 0.3rem 0;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.listing__location-title {
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+
+/* =========================CONTACT PAGE========================= */
+.contact__owner {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.owner__name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.message__form {
+  margin-top: 0.5rem;
+}
+
+.message {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.message__label {
+  margin-bottom: 0.5rem;
+}
+
+
