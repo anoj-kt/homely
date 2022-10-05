@@ -343,6 +343,15 @@ button {
   align-items: center;
 }
 
+.listing-text {
+  margin-top: 3rem;
+  font-weight: 600;
+}
+
+.listing-list {
+  padding: 0;
+}
+
 /* =========================EXPLORE========================= */
 @media (min-width: 1217px) {
   .explore {

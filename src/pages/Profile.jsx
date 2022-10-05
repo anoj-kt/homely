@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { db } from '../firebase.config';
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg';
 import homeIcon from '../assets/svg/homeIcon.svg';
+import ListingItem from '../components/ListingItem';
 
 function Profile() {
   const auth = getAuth();
@@ -79,6 +80,15 @@ function Profile() {
     }))
   };
 
+  const onDelete = async (listingId) => {
+    if(window.confirm('Are you sure you want to delete this listing?')) {
+      await deleteDoc(doc(db, "listings", listingId))
+      const updatedListings = listings.filter((listing) => listing.id !== listingId)
+      setListings(updatedListings)
+      toast.success("Successfully deleted listing")
+    }
+  }
+
   return (
     <div className="profile">
       <header className="profile__header">
@@ -121,6 +131,22 @@ function Profile() {
           <img src={arrowRight} alt="arrow right" />
         </Link>
       </main>
+
+      {!isLoading && listings?.length > 0 && (
+        <>
+          <p className="listing-text">Your listing</p>
+          <ul className="listing-list">
+            {listings.map((listing) => (
+              <ListingItem 
+                key={listing.id} 
+                listing={listing.data} 
+                id={listing.id} 
+                onDelete={() => onDelete(listing.id)}
+              />
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
   }
