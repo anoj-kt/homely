@@ -43,6 +43,10 @@ function Slider() {
     if(isLoading) {
         return <BeatLoader color="#00cc66"/>
     }
+
+    if(listings.length === 0) {
+        return <></>
+    }
     
     return (
         listings && (

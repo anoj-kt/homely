@@ -186,7 +186,9 @@ function EditListing() {
         delete formDataCopy.address
         !formDataCopy.offer && delete formDataCopy.discountedPrice
 
-        const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+        // Update listing
+        const docRef = doc(db, 'listings', params.listingId)
+        await updateDoc(docRef, formDataCopy)
 
         setIsLoading(false)
         toast.success('Listing has been uploaded!')
