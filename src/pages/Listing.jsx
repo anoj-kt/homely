@@ -102,7 +102,7 @@ function Listing() {
             <div className="leaflet__container">
                     <MapContainer 
                         style={{height: "100%", width: "100%"}} 
-                        center={[listing.geolocation.lat, listing.geolocation.lng]}
+                        center={[listing.geoLocation.lat, listing.geoLocation.lng]}
                         zoom={13}
                         scrollWheelZoom={false}
                     >
@@ -110,7 +110,7 @@ function Listing() {
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                        <Marker position={[listing.geolocation.lat, listing.geolocation.lng]}>
+                        <Marker position={[listing.geoLocation.lat, listing.geoLocation.lng]}>
                             <Popup>{listing.location}</Popup>
                         </Marker>
                     </ MapContainer>
