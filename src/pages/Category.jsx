@@ -10,6 +10,7 @@ import ListingItem from '../components/ListingItem';
 function Category() {
     const [listings, setListings] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [lastFetchedListing, setLastFetchedListing] = useState(null);
 
     const params = useParams();
 
@@ -22,10 +23,12 @@ function Category() {
                     listingRef, 
                     where('type', '==', params.categoryName), 
                     orderBy('timestamp', 'desc'), 
-                    limit(10)
+                    limit(5)
                 )
 
                 const queriedItems = await getDocs(fullQuery)
+                const lastVisible = queriedItems.docs[queriedItems.docs.length - 1]
+                setLastFetchedListing(lastVisible)
                 
                 const allListings = []
                     
@@ -47,6 +50,39 @@ function Category() {
         fetchListings()
     }, [params.categoryName])
 
+    const fetchMoreListings = async () => {
+        try {
+            const listingRef = collection(db, 'listings')
+
+            const fullQuery = query(
+                listingRef, 
+                where('type', '==', params.categoryName), 
+                orderBy('timestamp', 'desc'), 
+                startAfter(lastFetchedListing),
+                limit(5)
+            )
+
+            const queriedItems = await getDocs(fullQuery)
+            const lastVisible = queriedItems.docs[queriedItems.docs.length - 1]
+            setLastFetchedListing(lastVisible)
+            
+            const allListings = []
+                
+            queriedItems.forEach(doc => {
+                return allListings.push({
+                    id: doc.id,
+                    data: doc.data()
+                })
+            });
+
+            setListings((prev) => [...prev, ...allListings])
+            setIsLoading(false)
+        } catch (error) {
+            console.log(error)
+            toast.error('Oops! Something went wrong!')
+        }
+    }
+
     return (
         <div className="category">
             <header>
@@ -67,6 +103,9 @@ function Category() {
                         ))}
                     </ul>
                 </main>
+                {lastFetchedListing && (
+                    <p className="loadMore" onClick={fetchMoreListings}>Load More</p>
+                )}
                 </> 
                 : <p>No listings found for {params.categoryName}</p>}
         </div>
