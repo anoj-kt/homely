@@ -38,15 +38,25 @@ function EditListing() {
     const params = useParams()
     const isMounted = useRef(true)
 
+    // UseEffect to redirect unauthorized users
+    useEffect(() => {
+        if(listing && listing.userRef !== auth.currentUser.uid) {
+            toast.error('You are not authorized to this page')
+            navigate('/')
+        }
+    }, [])
+
+    // UseEffect to fetch data for editing
     useEffect(() => {
         setIsLoading(true)
 
         const fetchListing = async () => {
             const docRef = doc(db, "listings", params.listingId)
-            const selectedDoc = getDoc(docRef)
+            const selectedDoc = await getDoc(docRef)
 
             if(selectedDoc.exists()) {
                 setListing(selectedDoc.data())
+                setFormData({...selectedDoc.data(), address: selectedDoc.data().location})
                 setIsLoading(false)
             } else {
                 navigate('/')
@@ -59,6 +69,7 @@ function EditListing() {
         fetchListing()
     }, [])
 
+    // UseEffect to set userRef
     useEffect(() => {
         if(isMounted) {
             onAuthStateChanged(auth, user => {
