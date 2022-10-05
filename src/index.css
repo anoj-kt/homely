@@ -468,6 +468,21 @@ button {
   font-size: 0.7rem;
 }
 
+.loadMore {
+  cursor: pointer;
+  width: 8rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 1rem;
+  opacity: 0.7;
+  margin-top: 2rem;
+}
+
+
 /* =========================CREATE LISTING========================= */
 .form__label {
   font-weight: 600;
