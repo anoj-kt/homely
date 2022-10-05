@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, updateProfile } from 'firebase/auth';
-import { updateDoc, doc } from 'firebase/firestore';
+import { updateDoc, doc, collection, getDocs, query, where, orderBy, deleteDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 import { db } from '../firebase.config';
@@ -11,8 +11,9 @@ import homeIcon from '../assets/svg/homeIcon.svg';
 function Profile() {
   const auth = getAuth();
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [listings, setListings] = useState(null);
   const [changeDetails, setChangeDetails] = useState(false);
-  const [user, setUser] = useState({});
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
     email: auth.currentUser.email
@@ -21,6 +22,33 @@ function Profile() {
   const {name, email} = formData;
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchUserListings = async () => {
+      const listingsRef = collection(db, "listings")
+      const filter = query(
+        listingsRef, 
+        where("userRef", "==", auth.currentUser.uid), 
+        orderBy("timestamp", "desc")
+        )
+      const queriedItems = await getDocs(filter)
+
+      let listings = []
+
+      queriedItems.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data()
+        })
+      })
+
+      setListings(listings)
+      setIsLoading(false)
+    }
+
+    fetchUserListings()
+
+  }, [auth.currentUser.uid])
 
   const logOut = () => {
     auth.signOut()
