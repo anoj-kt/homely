@@ -379,7 +379,7 @@ function CreateListing() {
                 <div className="form__priceDiv">
                     <input 
                         className="form__inputSmall"
-                        type="text" 
+                        type="number" 
                         id="regularPrice"
                         value={regularPrice}
                         onChange={onMutate}
@@ -398,7 +398,7 @@ function CreateListing() {
                         <label className="form__label">Discounted Price</label>
                         <input
                             className="form__inputSmall"
-                            type="text" 
+                            type="number" 
                             id="discountedPrice"
                             value={discountedPrice}
                             onChange={onMutate}

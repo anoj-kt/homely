@@ -59,6 +59,12 @@ function Slider() {
                                     backgroundSize: "cover"}} 
                                 className="swiper__slide"
                             >
+                                <p className="swiper__slide-text">{data.name}</p>
+                                <p className="swiper__slide-price">
+                                    {data.offer ? data.discountedPrice.toLocaleString("de-DE") : data.regularPrice.toLocaleString("de-DE")}€
+                                    {' '}
+                                    {data.type === 'rent' && 'per month'}
+                                </p>
                             </div>
                         </SwiperSlide>
 
