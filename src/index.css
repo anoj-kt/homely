@@ -55,7 +55,7 @@ button {
 .listing__details,
 .category,
 .explore {
-  margin: 1rem;
+  margin: 1rem 1rem 85px;
 }
 @media (min-width: 1024px) {
   .page__container,
