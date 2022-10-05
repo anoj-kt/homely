@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
+import logo from './assets/jpg/logo-main.svg';
 import Navbar from './components/Navbar';
 import Explore from './pages/Explore';
 import Offers from './pages/Offers';
@@ -20,6 +21,9 @@ function App() {
   return (
     <>
     <Router>
+      <Link to="/" className="logo__main">
+        <img className="logo__main-img" src={logo} alt="" />
+      </Link>
       <Routes>
         <Route path="/" element={<Explore/>}/>
         <Route path="/offers" element={<Offers/>}/>
