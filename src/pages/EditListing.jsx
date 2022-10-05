@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { doc, updateDoc, getDoc, addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { doc, updateDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import BeatLoader from 'react-spinners/BeatLoader'; 
 import { v4 as uuidv4 } from 'uuid';
@@ -11,6 +11,7 @@ import { db } from '../firebase.config'
 
 function EditListing() {
     // ===========STATE===========
+    //eslint-disable-next-line
     const [geolocationEnabled, setGeolocationEnabled] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
     const [listing, setListing] = useState(false)
@@ -44,7 +45,7 @@ function EditListing() {
             toast.error('You are not authorized to this page')
             navigate('/')
         }
-    }, [])
+    }, [auth, formData, listing, navigate])
 
     // UseEffect to fetch data for editing
     useEffect(() => {
@@ -67,7 +68,7 @@ function EditListing() {
         }
 
         fetchListing()
-    }, [])
+    }, [navigate, params.listingId])
 
     // UseEffect to set userRef
     useEffect(() => {
@@ -84,7 +85,7 @@ function EditListing() {
         return () => {
             isMounted.current = false
         }
-    }, [isMounted])
+    }, [isMounted, auth, formData, navigate])
 
     // ===========EVENT HANDLERS===========
     const onSubmit = async (e) => {
@@ -149,6 +150,8 @@ function EditListing() {
                             break;
                         case 'running':
                             console.log('Upload is running');
+                            break;
+                        default:
                             break;
                         }
                     }, 

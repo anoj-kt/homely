@@ -11,6 +11,7 @@ import { db } from '../firebase.config'
 
 function CreateListing() {
     // ===========STATE===========
+    //eslint-disable-next-line
     const [geolocationEnabled, setGeolocationEnabled] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ function CreateListing() {
         return () => {
             isMounted.current = false
         }
-    }, [isMounted])
+    }, [isMounted, auth, formData, navigate])
 
     // ===========EVENT HANDLERS===========
     const onSubmit = async (e) => {
@@ -116,6 +117,8 @@ function CreateListing() {
                         case 'running':
                             console.log('Upload is running');
                             break;
+                        default: 
+                            break
                         }
                     }, 
                     (error) => {
