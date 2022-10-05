@@ -42,7 +42,7 @@ function ListingItem({listing, id, onEdit, onDelete}) {
         </Link>
         {onDelete && (
             <DeleteIcon 
-                className="remove__icon" 
+                className="icon__remove" 
                 fill="red" 
                 onClick={() => onDelete(listing.id, listing.name)} 
             />
@@ -51,7 +51,7 @@ function ListingItem({listing, id, onEdit, onDelete}) {
         {onEdit && (
             <EditIcon 
             className="icon__edit" 
-            fill="red" 
+            fill="black" 
             onClick={() => onEdit(id)} 
         />
         )}

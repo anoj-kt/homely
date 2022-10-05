@@ -352,6 +352,19 @@ button {
   padding: 0;
 }
 
+.icon__edit {
+  cursor: pointer;
+  position: absolute;
+  top: -3.4%;
+  right: 20px;
+}
+
+.icon__remove {
+  cursor: pointer;
+  position: absolute;
+  top: -3%;
+  right: -2%;
+}
 /* =========================EXPLORE========================= */
 @media (min-width: 1217px) {
   .explore {
