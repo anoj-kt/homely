@@ -51,7 +51,7 @@ function CreateListing() {
         return () => {
             isMounted.current = false
         }
-    }, [isMounted, auth, formData, navigate])
+    }, [isMounted])
 
     // ===========EVENT HANDLERS===========
     const onSubmit = async (e) => {

@@ -45,7 +45,7 @@ function EditListing() {
             toast.error('You are not authorized to this page')
             navigate('/')
         }
-    }, [auth, formData, listing, navigate])
+    }, [auth])
 
     // UseEffect to fetch data for editing
     useEffect(() => {
@@ -85,7 +85,7 @@ function EditListing() {
         return () => {
             isMounted.current = false
         }
-    }, [isMounted, auth, formData, navigate])
+    }, [isMounted])
 
     // ===========EVENT HANDLERS===========
     const onSubmit = async (e) => {
