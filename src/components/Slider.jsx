@@ -44,7 +44,6 @@ function Slider() {
         return <BeatLoader color="#00cc66"/>
     }
     
-    console.log(listings)
     return (
         listings && (
             <div>
@@ -61,7 +60,7 @@ function Slider() {
                             >
                                 <p className="swiper__slide-text">{data.name}</p>
                                 <p className="swiper__slide-price">
-                                    {data.offer ? data.discountedPrice.toLocaleString("de-DE") : data.regularPrice.toLocaleString("de-DE")}€
+                                    {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€
                                     {' '}
                                     {data.type === 'rent' && 'per month'}
                                 </p>
