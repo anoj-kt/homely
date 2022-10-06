@@ -13,6 +13,7 @@ html::-webkit-scrollbar {
   --main-lightblue:	hsl(182, 59%, 45%);
   --main-darkblue: 	hsl(199, 67%, 18%);
   --main-body: hsl(348, 71%, 99%);
+  --outline-grey: hsl(40, 4%, 88%);
   --danger: 	hsl(354, 70%, 54%);
 }
 
@@ -121,8 +122,9 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 85px;
-  background-color: var(--main-lightblue);
+  height: 70px;
+  background-color: var(--main-body);
+  border-top: 1px solid var(--outline-grey);
   z-index: 1000;
   display: flex;
   justify-content: center;
