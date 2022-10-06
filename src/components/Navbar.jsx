@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import {ReactComponent as OfferIcon } from '../assets/svg/localOfferIcon.svg'
-import {ReactComponent as ExploreIcon } from '../assets/svg/exploreIcon.svg'
-import {ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutlineIcon.svg'
+
+import logo from '../assets/logo/logo-main.svg';
+import menuOpen from '../assets/svg/nav-hamburger-bars.svg';
+import menuClose from '../assets/svg/close-x.svg';
 
 function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -14,11 +18,20 @@ function Navbar() {
     }
 
     return (
-      <footer className="navbar__container">
-        <nav className="navbar__nav">
+      <nav className="navbar__container">
+            <img className="navbar__logo-img" src={logo} alt="logo" onClick={() => navigate('/')}/>
+            <div className="navbar__toggle-container">
+                <img 
+                    src={
+                        isMenuOpen ? menuClose : menuOpen
+                    } 
+                    alt="menu toggle" 
+                    className="navbar__toggle-icon" 
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                />
+            </div>
             <ul className="navbar__items">
                 <li className="navbar__item" onClick={() => navigate('/')}>
-                    <ExploreIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px"/>
                     <p
                     className={pathMatch('/')? "navbar__itemNameActive" : "navbar__itemName"}
                     >
@@ -26,7 +39,6 @@ function Navbar() {
                     </p>
                 </li>
                 <li className="navbar__item">
-                    <OfferIcon fill={pathMatch('/offers')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/offers')}/>
                     <p
                     className={pathMatch('/offers')? "navbar__itemNameActive" : "navbar__itemName"}
                     >
@@ -34,7 +46,13 @@ function Navbar() {
                     </p>
                 </li>
                 <li className="navbar__item">
-                    <PersonOutlineIcon fill={pathMatch('/profile')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/profile')}/>
+                    <p
+                    className={pathMatch('/offers')? "navbar__itemNameActive" : "navbar__itemName"}
+                    >
+                    Post property
+                    </p>
+                </li>
+                <li className="navbar__item">
                     <p
                     className={pathMatch('/profile')? "navbar__itemNameActive" : "navbar__itemName"}
                     >
@@ -42,8 +60,7 @@ function Navbar() {
                     </p>
                 </li>
             </ul>
-        </nav>
-      </footer>
+      </nav>
     );
   }
   
