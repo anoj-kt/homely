@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -7,9 +7,19 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+/* =========================VARIABLES========================= */
+:root {
+  --main-yellow: hsl(42, 94%, 54%);
+  --main-lightblue:	hsl(182, 59%, 45%);
+  --main-darkblue: 	hsl(199, 67%, 18%);
+  --main-body: hsl(348, 71%, 99%);
+  --outline-grey: hsl(40, 4%, 88%);
+  --danger: 	hsl(354, 70%, 54%);
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f2f4f8;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--main-body);
   margin: 0;
   box-sizing: border-box;
 }
@@ -26,6 +36,16 @@ button {
 }
 
 /* =========================GENERAL========================= */
+.logo__main {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.logo__main-img {
+  width: 40%;
+}
+
 .page__header {
   font-size: 2rem;
   font-weight: 800;
@@ -37,7 +57,7 @@ button {
 .listing__details,
 .category,
 .explore {
-  margin: 1rem;
+  margin: 1rem 1rem 85px;
 }
 @media (min-width: 1024px) {
   .page__container,
@@ -102,8 +122,9 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 85px;
-  background-color: #ffffff;
+  height: 70px;
+  background-color: var(--main-body);
+  border-top: 1px solid var(--outline-grey);
   z-index: 1000;
   display: flex;
   justify-content: center;
