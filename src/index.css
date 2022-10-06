@@ -38,10 +38,11 @@ button {
 .logo__main {
   display: flex;
   justify-content: center;
+  margin: 0.5rem 0;
 }
 
 .logo__main-img {
-  width: 60%;
+  width: 40%;
 }
 
 .page__header {
@@ -121,7 +122,7 @@ button {
   bottom: 0;
   right: 0;
   height: 85px;
-  background-color: #ffffff;
+  background-color: var(--main-lightblue);
   z-index: 1000;
   display: flex;
   justify-content: center;
