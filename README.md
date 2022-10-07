@@ -1,4 +1,4 @@
-# Housey (Project still under development)
+# Homely (Project still under development)
 A platform to search or list properties for rent or sale.
 
 ## Language/Framework used
