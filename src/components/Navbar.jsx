@@ -15,51 +15,70 @@ function Navbar() {
         if(route === location.pathname) {
             return true
         }
-    }
+    } 
 
     return (
       <nav className="navbar__container">
-            <img className="navbar__logo-img" src={logo} alt="logo" onClick={() => navigate('/')}/>
-            <div className="navbar__toggle-container">
-                <img 
-                    src={
-                        isMenuOpen ? menuClose : menuOpen
-                    } 
-                    alt="menu toggle" 
-                    className="navbar__toggle-icon" 
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+        <div className="navbar__logo-container">
+            <img className="navbar__logo" src={logo} alt="logo" onClick={() => navigate('/')}/>
+            <img 
+                    src={menuOpen} 
+                    alt="menu toggle"
+                    className="navbar__toggle-hamburger" 
+                    onClick={() => {
+                        setIsMenuOpen(!isMenuOpen)                   
+                    }}
                 />
-            </div>
+        </div>
+        <div className={isMenuOpen ? "navbar__links" : "navbar__links--close"}>
+            <div className={isMenuOpen ? "body__background__navbar--open" : "body__background__navbar--close"}></div>
+            <img 
+                src={menuClose} 
+                alt="menu toggle" 
+                className={isMenuOpen && "navbar__toggle navbar__toggle-cross" } 
+                onClick={() => {
+                    setIsMenuOpen(!isMenuOpen)
+                }}
+            />
             <ul className="navbar__items">
-                <li className="navbar__item" onClick={() => navigate('/')}>
-                    <p
-                    className={pathMatch('/')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Explore
-                    </p>
                 </li>
-                <li className="navbar__item">
-                    <p
-                    className={pathMatch('/offers')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/offers')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Offers
-                    </p>
                 </li>
-                <li className="navbar__item">
-                    <p
-                    className={pathMatch('/offers')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/create-listing')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Post property
-                    </p>
                 </li>
-                <li className="navbar__item">
-                    <p
-                    className={pathMatch('/profile')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/profile')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Profile
-                    </p>
                 </li>
             </ul>
+        </div>
       </nav>
     );
   }
