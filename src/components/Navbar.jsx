@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import {ReactComponent as OfferIcon } from '../assets/svg/localOfferIcon.svg'
-import {ReactComponent as ExploreIcon } from '../assets/svg/exploreIcon.svg'
-import {ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutlineIcon.svg'
+
+import logo from '../assets/logo/logo-main.svg';
+import menuOpen from '../assets/svg/nav-hamburger-bars.svg';
+import menuClose from '../assets/svg/close-x.svg';
 
 function Navbar() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -11,39 +15,71 @@ function Navbar() {
         if(route === location.pathname) {
             return true
         }
-    }
+    } 
 
     return (
-      <footer className="navbar__container">
-        <nav className="navbar__nav">
+      <nav className="navbar__container">
+        <div className="navbar__logo-container">
+            <img className="navbar__logo" src={logo} alt="logo" onClick={() => navigate('/')}/>
+            <img 
+                    src={menuOpen} 
+                    alt="menu toggle"
+                    className="navbar__toggle-hamburger" 
+                    onClick={() => {
+                        setIsMenuOpen(!isMenuOpen)                   
+                    }}
+                />
+        </div>
+        <div className={isMenuOpen ? "navbar__links" : "navbar__links--close"}>
+            <div className={isMenuOpen ? "body__background__navbar--open" : "body__background__navbar--close"}></div>
+            <img 
+                src={menuClose} 
+                alt="menu toggle" 
+                className={isMenuOpen && "navbar__toggle navbar__toggle-cross" } 
+                onClick={() => {
+                    setIsMenuOpen(!isMenuOpen)
+                }}
+            />
             <ul className="navbar__items">
-                <li className="navbar__item" onClick={() => navigate('/')}>
-                    <ExploreIcon fill={pathMatch('/')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px"/>
-                    <p
-                    className={pathMatch('/')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Explore
-                    </p>
                 </li>
-                <li className="navbar__item">
-                    <OfferIcon fill={pathMatch('/offers')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/offers')}/>
-                    <p
-                    className={pathMatch('/offers')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/offers')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Offers
-                    </p>
                 </li>
-                <li className="navbar__item">
-                    <PersonOutlineIcon fill={pathMatch('/profile')? "#2c2c2c" : "#8f8f8f"} width="36px" height="36px" onClick={() => navigate('/profile')}/>
-                    <p
-                    className={pathMatch('/profile')? "navbar__itemNameActive" : "navbar__itemName"}
-                    >
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/create-listing')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
+                    Post property
+                </li>
+                <li 
+                    className="navbar__item" 
+                    onClick={() => {
+                        navigate('/profile')
+                        setIsMenuOpen(!isMenuOpen)
+                    }}
+                >
                     Profile
-                    </p>
                 </li>
             </ul>
-        </nav>
-      </footer>
+        </div>
+      </nav>
     );
   }
   

@@ -21,9 +21,7 @@ function App() {
   return (
     <>
     <Router>
-      <Link to="/" className="logo__main">
-        <img className="logo__main-img" src={logo} alt="" />
-      </Link>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Explore/>}/>
         <Route path="/offers" element={<Offers/>}/>
@@ -39,7 +37,6 @@ function App() {
         <Route path="/category/:categoryName/:listingId" element={<Listing/>}/>
         <Route path="/contact/:ownerId" element={<Contact/>}/>
       </Routes>
-      <Navbar/>
     </Router>
     <ToastContainer />
     </>

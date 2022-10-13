@@ -11,7 +11,9 @@ html::-webkit-scrollbar {
 :root {
   --main-yellow: hsl(42, 94%, 54%);
   --main-lightblue:	hsl(182, 59%, 45%);
+  --main-lightblue-hover:	hsl(182, 59%, 40%);
   --main-darkblue: 	hsl(199, 67%, 18%);
+  --main-darkblue-hover: 	hsl(199, 67%, 25%);
   --main-body: hsl(348, 71%, 99%);
   --outline-grey: hsl(40, 4%, 88%);
   --danger: 	hsl(354, 70%, 54%);
@@ -21,6 +23,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--main-body);
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -57,7 +60,7 @@ button {
 .listing__details,
 .category,
 .explore {
-  margin: 1rem 1rem 85px;
+  margin: 70px 1rem 1rem;
 }
 @media (min-width: 1024px) {
   .page__container,
@@ -66,7 +69,7 @@ button {
   .listing__details,
   .category,
   .explore {
-    margin: 3rem;
+    margin: 80px 1rem 1rem;
   }
 }
 
@@ -118,50 +121,149 @@ button {
 
 /* =========================NAVBAR========================= */
 .navbar__container {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 70px;
   background-color: var(--main-body);
-  border-top: 1px solid var(--outline-grey);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar__nav {
-  width: 100%;
-  margin-top: 0.75rem;
-  overflow-y: hidden;
-}
-
-.navbar__items {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.navbar__item {
-  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  height: 3.5rem;
+  width: 100%;
+  z-index: 10;
 }
 
-.navbar__itemName,
-.navbar__itemNameActive {
-  margin-top: 0.25rem;
-  font-size: 14px;
-  font-weight: 600;
-  color: #8f8f8f;
+.navbar__logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
 }
-.navbar__itemNameActive {
-  color: #2c2c2c;
+
+.navbar__logo {
+  margin-left: 0.5rem;
+  height: 70%;
+  cursor: pointer;
 }
+
+.navbar__toggle-hamburger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+}
+
+.navbar__toggle-cross {
+  position: absolute;
+  top: 0.5rem;
+  right: 70vw;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  height:2.5rem;
+  width: 2.5rem;
+  box-sizing: content-box;
+  background-color: white;
+  z-index: 10;
+}
+
+.body__background__navbar--open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 30%;
+  background-color: hsl(0, 0%, 0%, 0.5);
+  z-index: 2;
+  transition: background-color 0.3s, width 0.5s;
+}
+
+.body__background__navbar--close {
+  visibility: hidden;
+  width: 100%;
+  background-color: hsl(0, 0%, 0%, 0);
+}
+
+.navbar__links {
+  background-color: var(--main-darkblue);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 70%;
+  transition: width 0.5s ease;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+}
+
+.navbar__links--close {
+  visibility: hidden;
+  width: 0%;
+  /* transition: width 0.5s ease;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;  */
+}
+
+.navbar__links ul {
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  height: 100%;
+  z-index: 15;
+}
+
+.navbar__links li {
+  list-style: none;
+  padding: 1rem;
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navbar__links li:hover {
+  background-color: var(--main-darkblue-hover);
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar__container {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    z-index: 10;
+  }
+  
+  .navbar__logo-img {
+    margin-left: 0.5rem;
+    height: 70%;
+    cursor: pointer;
+  }
+  
+  .navbar__toggle-container {
+    display: flex;
+    height: 80%;
+    display: none;
+  }
+  
+  .navbar__links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar__links li {
+    list-style: none;
+    padding: 1rem;
+    display: block;
+  }
+}
+
 
 /* =========================SIGN IN & SIGN UP========================= */
 .email__input {
