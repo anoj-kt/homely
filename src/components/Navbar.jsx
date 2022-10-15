@@ -35,7 +35,7 @@ function Navbar() {
             <img 
                 src={menuClose} 
                 alt="menu toggle" 
-                className={isMenuOpen && "navbar__toggle navbar__toggle-cross" } 
+                className={isMenuOpen ? "navbar__toggle navbar__toggle-cross" : undefined } 
                 onClick={() => {
                     setIsMenuOpen(!isMenuOpen)
                 }}
