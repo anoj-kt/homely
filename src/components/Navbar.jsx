@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import logo from '../assets/logo/logo-main.svg';
 import menuOpen from '../assets/svg/nav-hamburger-bars.svg';
@@ -9,13 +9,12 @@ function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const navigate = useNavigate();
-    const location = useLocation();
 
-    const pathMatch = (route) => {
-        if(route === location.pathname) {
-            return true
+    const closeNavbarHandler = () => {
+        if(isMenuOpen) {
+            setIsMenuOpen(!isMenuOpen)
         }
-    } 
+    }
 
     return (
       <nav className="navbar__container">
@@ -30,16 +29,20 @@ function Navbar() {
                     }}
                 />
         </div>
-        <div className={isMenuOpen ? "navbar__links" : "navbar__links--close"}>
-            <div className={isMenuOpen ? "body__background__navbar--open" : "body__background__navbar--close"}></div>
-            <img 
+        <div 
+            className={isMenuOpen ? "body__background__navbar--open" : "body__background__navbar--close"}
+            onClick={closeNavbarHandler}
+        >
+        </div>
+        <img 
                 src={menuClose} 
                 alt="menu toggle" 
-                className={isMenuOpen ? "navbar__toggle navbar__toggle-cross" : undefined } 
+                className={isMenuOpen ? "navbar__toggle-cross--open" : "navbar__toggle-cross--close" } 
                 onClick={() => {
                     setIsMenuOpen(!isMenuOpen)
                 }}
             />
+        <div className={isMenuOpen ? "navbar__links" : "navbar__links navbar__links--close"}>    
             <ul className="navbar__items">
                 <li 
                     className="navbar__item" 
