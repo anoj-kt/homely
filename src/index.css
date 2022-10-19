@@ -10,10 +10,13 @@ html::-webkit-scrollbar {
 /* =========================VARIABLES========================= */
 :root {
   --main-yellow: hsl(42, 94%, 54%);
+  --main-yellow-transparent: hsla(42, 94%, 54%, 0.8);
   --main-lightblue:	hsl(182, 59%, 45%);
   --main-lightblue-hover:	hsl(182, 59%, 40%);
+  --main-lightblue-transparent:	hsla(182, 59%, 45%, 0.8);
   --main-darkblue: 	hsl(199, 67%, 18%);
   --main-darkblue-hover: 	hsl(199, 67%, 25%);
+  --main-darkblue-transparent: 	hsla(199, 67%, 18%, 0.8);
   --main-body: hsl(348, 71%, 99%);
   --outline-grey: hsl(40, 4%, 88%);
   --danger: 	hsl(354, 70%, 54%);
@@ -728,6 +731,20 @@ button {
   background-color: #ffffff !important;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  padding: 1.5rem 1rem;
+  background-color: hsl(0, 0%, 0%, 0.3);
+}
+
+@media screen and (max-width: 480px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important; 
+  }
+}
+
 .swiper__slide {
   position: relative;
   background-color: #00cc66;
@@ -740,16 +757,21 @@ button {
   object-fit: cover;
 }
 
+.swiper__slide-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .swiper__slide-text {
-  color: #ffffff;
-  position: absolute;
-  top: 70px;
-  left: 0;
+  color: var(--main-body);
   font-weight: 600;
   max-width: 90%;
   font-size: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--main-darkblue-transparent);
   padding: 0.5rem;
+  margin: 0;
 }
 @media (min-width: 1024px) {
   .swiper__slide-text {
@@ -758,20 +780,31 @@ button {
 }
 
 .swiper__slide-price {
-  color: #000000;
-  position: absolute;
-  top: 143px;
-  left: 11px;
+  color: var(--main-darkblue);
+  font-size: 1rem;
   font-weight: 600;
   max-width: 90%;
-  background-color: #ffffff;
-  padding: 0.25rem 0.5rem;
+  background-color: var(--main-yellow);
+  padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
 @media (min-width: 1024px) {
   .swiper__slide-price {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
+}
+
+.swiper__slide-type {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--main-body);
+  padding: 0.5rem;
+  margin: 0;
+  background-color: var(--main-lightblue);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 1rem;
 }
 
 .icon__share {

@@ -42,7 +42,7 @@ function Slider() {
     }, [])
 
     if(isLoading) {
-        return <BeatLoader color="#00cc66"/>
+        return <BeatLoader style={{display: "flex", justifyContent: "center"}} color="#00cc66"/>
     }
 
     if(listings.length === 0) {
@@ -54,7 +54,7 @@ function Slider() {
             <div>
                 
                 <p className="explore__heading">Recommended</p>
-                <Swiper slidesPerView={1} pagination={{clickable:true}}>
+                <Swiper navigation={true} modules={[Navigation]} slidesPerView={1} pagination={{clickable:true}}>
                     {listings.map(({data, id}) => (
                         <SwiperSlide key={id} onClick={() => {navigate(`/category/${data.type}/${id}`)}}>
                             <div 
@@ -63,17 +63,20 @@ function Slider() {
                                     backgroundSize: "cover"}} 
                                 className="swiper__slide"
                             >
-                                <p className="swiper__slide-text">{data.name}</p>
-                                <p className="swiper__slide-price">
-                                    {data.offer 
-                                        ? Number(data.discountedPrice).toLocaleString("de-DE")
-                                        : Number(data.regularPrice).toLocaleString("de-DE")
-                                    }
-                                    {' '}€
-                                    {/* {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€ */}
-                                    {' '}
-                                    {data.type === 'rent' && 'per month'}
-                                </p>
+                                <div className="swiper__slide-content">
+                                    <p className="swiper__slide-text">{data.name}</p>
+                                    <p className="swiper__slide-price">
+                                        {data.offer 
+                                            ? Number(data.discountedPrice).toLocaleString("de-DE")
+                                            : Number(data.regularPrice).toLocaleString("de-DE")
+                                        }
+                                        {' '}€
+                                        {/* {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€ */}
+                                        {' '}
+                                        {data.type === 'rent' && 'per month'}
+                                    </p>
+                                </div>
+                                <p className="swiper__slide-type">{data.type === 'rent' ? 'For Rent' : 'For Sale'}</p>
                             </div>
                         </SwiperSlide>
 
