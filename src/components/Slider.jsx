@@ -63,17 +63,20 @@ function Slider() {
                                     backgroundSize: "cover"}} 
                                 className="swiper__slide"
                             >
-                                <p className="swiper__slide-text">{data.name}</p>
-                                <p className="swiper__slide-price">
-                                    {data.offer 
-                                        ? Number(data.discountedPrice).toLocaleString("de-DE")
-                                        : Number(data.regularPrice).toLocaleString("de-DE")
-                                    }
-                                    {' '}€
-                                    {/* {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€ */}
-                                    {' '}
-                                    {data.type === 'rent' && 'per month'}
-                                </p>
+                                <div className="swiper__slide-content">
+                                    <p className="swiper__slide-text">{data.name}</p>
+                                    <p className="swiper__slide-price">
+                                        {data.offer 
+                                            ? Number(data.discountedPrice).toLocaleString("de-DE")
+                                            : Number(data.regularPrice).toLocaleString("de-DE")
+                                        }
+                                        {' '}€
+                                        {/* {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€ */}
+                                        {' '}
+                                        {data.type === 'rent' && 'per month'}
+                                    </p>
+                                </div>
+                                <p className="swiper__slide-type">{data.type === 'rent' ? 'For Rent' : 'For Sale'}</p>
                             </div>
                         </SwiperSlide>
 
