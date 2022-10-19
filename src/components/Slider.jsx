@@ -54,7 +54,7 @@ function Slider() {
             <div>
                 
                 <p className="explore__heading">Recommended</p>
-                <Swiper slidesPerView={1} pagination={{clickable:true}}>
+                <Swiper navigation={true} modules={[Navigation]} slidesPerView={1} pagination={{clickable:true}}>
                     {listings.map(({data, id}) => (
                         <SwiperSlide key={id} onClick={() => {navigate(`/category/${data.type}/${id}`)}}>
                             <div 
