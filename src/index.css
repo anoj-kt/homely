@@ -154,10 +154,9 @@ button {
   right: 0.5rem;
   height: 2rem;
   width: 2rem;
-  display: flex;
 }
 
-.navbar__toggle-cross {
+.navbar__toggle-cross--open {
   position: absolute;
   top: 0.5rem;
   right: 70vw;
@@ -170,49 +169,44 @@ button {
   z-index: 10;
 }
 
+.navbar__toggle-cross--close {
+  display: none;
+}
+
 .body__background__navbar--open {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 30%;
+  width: 100%;
   background-color: hsl(0, 0%, 0%, 0.5);
   z-index: 2;
-  transition: background-color 0.3s, width 0.5s;
+  transition: background-color 0.3s;
 }
 
 .body__background__navbar--close {
-  visibility: hidden;
-  width: 100%;
+  width: 0;
   background-color: hsl(0, 0%, 0%, 0);
 }
 
 .navbar__links {
   background-color: var(--main-darkblue);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
   z-index: 10;
   height: 100vh;
   width: 70%;
-  transition: width 0.5s ease;
-  -webkit-transition: width 0.5s;
-  -moz-transition: width 0.5s;
+  transition: width 0.3s ease;
 }
 
 .navbar__links--close {
-  visibility: hidden;
-  width: 0%;
-  /* transition: width 0.5s ease;
-  -webkit-transition: width 0.5s;
-  -moz-transition: width 0.5s;  */
-}
+  width: 0;
+} 
 
 .navbar__links ul {
   margin: 0;
   padding: 0;
-  flex-direction: column;
   height: 100%;
   z-index: 15;
 }
@@ -223,15 +217,38 @@ button {
   display: block;
   color: white;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .navbar__links li:hover {
   background-color: var(--main-darkblue-hover);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar__links {
+    width: 55%;
+  }
+
+  .navbar__links--close {
+    width: 0;
+  } 
+
+  .navbar__toggle-cross--open {
+    right: 55vw;
+  }
+
+}
+
 @media screen and (min-width: 1024px) {
+  .navbar__toggle-hamburger,
+  .navbar__toggle-cross--open,
+  .navbar__toggle-cross--close,
+  .body__background__navbar--close,
+  .body__background__navbar--open {
+    display: none;
+  }
+
   .navbar__container {
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -245,23 +262,35 @@ button {
     cursor: pointer;
   }
   
-  .navbar__toggle-container {
+  .navbar__links, .navbar__links--close {
+    background-color: inherit;
     display: flex;
-    height: 80%;
-    display: none;
+    justify-content: end;
+    align-items: center;
+    height: inherit;
+    width: 70%;
   }
-  
+
   .navbar__links ul {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
   }
   
   .navbar__links li {
     list-style: none;
     padding: 1rem;
-    display: block;
+    font-size: 1.25rem;
+    color: var(--main-darkblue);
   }
+
+  .navbar__links li:hover {
+    color: var(--main-yellow);
+    background-color: inherit;
+    transition: color 0.3s;
+  }
+
 }
 
 
