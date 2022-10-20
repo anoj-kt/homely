@@ -93,7 +93,7 @@ function Category() {
             </header>
 
             {isLoading ? 
-            <BeatLoader color="#00cc66"/> 
+            <BeatLoader color="hsl(42, 94%, 54%)"/> 
             : listings && listings.length > 0 ? 
                 <>
                 <main>
