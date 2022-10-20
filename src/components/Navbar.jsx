@@ -27,6 +27,7 @@ function Navbar() {
                     onClick={() => {
                         setIsMenuOpen(!isMenuOpen)                   
                     }}
+                    fill="green"
                 />
         </div>
         <div 

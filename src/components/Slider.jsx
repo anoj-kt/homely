@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Autoplay, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import BeatLoader from 'react-spinners/BeatLoader'
@@ -9,6 +9,7 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import { async } from '@firebase/util';
 
 import { db } from '../firebase.config';
+import locationIcon from '../assets/svg/location.svg'
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar, A11y ])
 
@@ -52,31 +53,42 @@ function Slider() {
     return (
         listings && (
             <div>
-                
-                <p className="explore__heading">Recommended</p>
-                <Swiper navigation={true} modules={[Navigation]} slidesPerView={1} pagination={{clickable:true}}>
+                <Swiper 
+                    navigation={true} 
+                    modules={[Navigation, Autoplay, Pagination]} 
+                    slidesPerView={1} 
+                    pagination={{clickable:true}}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: true,
+                      }}
+                    loop={true}
+                >
                     {listings.map(({data, id}) => (
                         <SwiperSlide key={id} onClick={() => {navigate(`/category/${data.type}/${id}`)}}>
-                            <div 
-                                style={{
-                                    background: `url(${data.imageUrls[0]}) center no-repeat`, 
-                                    backgroundSize: "cover"}} 
-                                className="swiper__slide"
-                            >
-                                <div className="swiper__slide-content">
-                                    <p className="swiper__slide-text">{data.name}</p>
+                            <div className="swiper__slide">
+                                <div className="swiper__slide-img-container">
+                                    <p className="swiper__slide-name">{data.name}</p>
+                                    <p className="swiper__slide-type">{data.type === 'rent' ? 'For Rent' : 'For Sale'}</p>
+                                    <img 
+                                        className="swiper__slide-img" 
+                                        src={data.imageUrls[0]} 
+                                        alt="Property image" 
+                                    />
+                                </div>
+                                <div className="swiper__slide-loc-container">
+                                    <p className="swiper__slide-location">{data.location}</p>
                                     <p className="swiper__slide-price">
                                         {data.offer 
                                             ? Number(data.discountedPrice).toLocaleString("de-DE")
                                             : Number(data.regularPrice).toLocaleString("de-DE")
                                         }
                                         {' '}€
-                                        {/* {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€ */}
-                                        {' '}
-                                        {data.type === 'rent' && 'per month'}
+                                        {data.type === 'rent' && '/mo'}
                                     </p>
                                 </div>
-                                <p className="swiper__slide-type">{data.type === 'rent' ? 'For Rent' : 'For Sale'}</p>
+                                
+                                
                             </div>
                         </SwiperSlide>
 
