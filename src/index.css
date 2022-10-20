@@ -25,9 +25,10 @@ html::-webkit-scrollbar {
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--main-body);
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
+  max-width: 1440px;
 }
 
 a {
@@ -724,7 +725,7 @@ button {
 /* =========================SWIPER========================= */
 .swiper {
   min-height: 240px;
-  height: 23vw;
+  height: 35vw;
 }
 
 .swiper-pagination-bullet-active {
@@ -758,6 +759,11 @@ button {
     height: 65%;
   }
 }
+@media screen and (min-width: 1024px) {
+  .swiper__slide-img-container {
+    height: 75%;
+  }
+}
 
 .swiper__slide-img {
   border-radius: 10px;
@@ -782,9 +788,13 @@ button {
   margin: 0;
   margin-bottom: 0.5rem;
 }
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .swiper__slide-name {
+    position: absolute;
+    top: 0.75rem;
     font-size: 1.75rem;
+    font-weight: 600;
+    padding: 0.5rem;
   }
 }
 
@@ -803,7 +813,13 @@ button {
 }
 @media screen and (min-width: 1024px) {
   .swiper__slide-type {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    bottom: auto;
+    padding: 0.5rem;
     font-size: 1rem;
+    border-radius: 10px 0 0 10px;
   }
 }
 
@@ -827,6 +843,13 @@ button {
   font-size: 0.75rem;
   margin: 0.5rem 0;
 }
+@media screen and (min-width: 1024px) {
+  .swiper__slide-location {
+    color: var(--main-darkblue);
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+}
 
 .swiper__slide-price {
   color: var(--main-darkblue);
@@ -838,10 +861,9 @@ button {
   margin: 0;
   border-radius: 10px;
 }
-
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .swiper__slide-price {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
