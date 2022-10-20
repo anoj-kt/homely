@@ -53,17 +53,15 @@ function Slider() {
     return (
         listings && (
             <div>
-                
-                <p className="explore__heading">Recommended</p>
                 <Swiper 
                     navigation={true} 
                     modules={[Navigation, Autoplay, Pagination]} 
                     slidesPerView={1} 
                     pagination={{clickable:true}}
-                    // autoplay={{
-                    //     delay: 2500,
-                    //     disableOnInteraction: true,
-                    //   }}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: true,
+                      }}
                     loop={true}
                 >
                     {listings.map(({data, id}) => (
@@ -86,7 +84,6 @@ function Slider() {
                                             : Number(data.regularPrice).toLocaleString("de-DE")
                                         }
                                         {' '}€
-                                        {/* {data.discountedPrice.toLocaleString("de-DE") ?? data.regularPrice.toLocaleString("de-DE")}€ */}
                                         {data.type === 'rent' && '/mo'}
                                     </p>
                                 </div>

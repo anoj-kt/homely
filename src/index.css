@@ -53,8 +53,8 @@ button {
 }
 
 .page__header {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .page__container,
@@ -723,12 +723,12 @@ button {
 
 /* =========================EACH FETCHED LISTING========================= */
 .swiper {
-  min-height: 250px;
+  min-height: 240px;
   height: 23vw;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ffffff !important;
+  background-color: var(--main-yellow) !important;
 }
 
 .swiper-button-next,
