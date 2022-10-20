@@ -43,7 +43,7 @@ function Slider() {
     }, [])
 
     if(isLoading) {
-        return <BeatLoader style={{display: "flex", justifyContent: "center"}} color="#00cc66"/>
+        return <BeatLoader style={{display: "flex", justifyContent: "center"}} color="hsl(42, 94%, 54%)"/>
     }
 
     if(listings.length === 0) {
