@@ -721,7 +721,7 @@ button {
   margin-top: 5rem;
 }
 
-/* =========================EACH FETCHED LISTING========================= */
+/* =========================SWIPER========================= */
 .swiper {
   min-height: 240px;
   height: 23vw;
@@ -737,8 +737,7 @@ button {
   padding: 1.5rem 1rem;
   background-color: hsl(0, 0%, 0%, 0.3);
 }
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important; 
@@ -753,6 +752,11 @@ button {
 .swiper__slide-img-container {
   position: relative;
   height: 50%;
+}
+@media screen and (min-width: 480px) {
+  .swiper__slide-img-container {
+    height: 65%;
+  }
 }
 
 .swiper__slide-img {
@@ -797,7 +801,7 @@ button {
   font-size: 0.75rem;
   font-weight: 600;
 }
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .swiper__slide-type {
     font-size: 1rem;
   }
@@ -809,11 +813,19 @@ button {
   align-items: start;
   justify-content: center;
 }
+@media screen and (min-width: 480px) {
+  .swiper__slide-loc-container  {
+    margin: 0.5rem 0.25rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
 
 .swiper__slide-location {
   color: var(--main-darkblue);
   font-size: 0.75rem;
-  margin: 0.25rem;
+  margin: 0.5rem 0;
 }
 
 .swiper__slide-price {
@@ -833,6 +845,7 @@ button {
   }
 }
 
+/* =========================EACH FETCHED LISTING========================= */
 .icon__share {
   cursor: pointer;
   position: fixed;
