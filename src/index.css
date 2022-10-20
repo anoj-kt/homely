@@ -723,7 +723,7 @@ button {
 
 /* =========================EACH FETCHED LISTING========================= */
 .swiper {
-  min-height: 225px;
+  min-height: 250px;
   height: 23vw;
 }
 
@@ -746,39 +746,74 @@ button {
 }
 
 .swiper__slide {
-  position: relative;
-  background-color: #00cc66;
   width: 100%;
   height: 100%;
 }
 
+.swiper__slide-img-container {
+  position: relative;
+  height: 50%;
+}
+
 .swiper__slide-img {
+  border-radius: 10px;
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-.swiper__slide-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0.5rem 0;
-}
-
-.swiper__slide-text {
+.swiper__slide-name {
+  position: absolute;
+  top: 0.25rem;
   color: var(--main-body);
-  font-weight: 600;
-  max-width: 90%;
-  font-size: 1.25rem;
   background-color: var(--main-darkblue-transparent);
-  padding: 0.5rem;
+  font-weight: 400;
+  max-width: 90%;
+  font-size: 1rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0.25rem;
+  padding-right: 0.5rem;
   margin: 0;
   margin-bottom: 0.5rem;
 }
 @media (min-width: 1024px) {
-  .swiper__slide-text {
+  .swiper__slide-name {
     font-size: 1.75rem;
   }
+}
+
+.swiper__slide-type {
+  position: absolute;
+  bottom: 0.25rem;
+  color: var(--main-body);
+  padding: 0.25rem;
+  padding-right: 0.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 0;
+  background-color: var(--main-lightblue-transparent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+@media (min-width: 1024px) {
+  .swiper__slide-type {
+    font-size: 1rem;
+  }
+}
+
+.swiper__slide-loc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.swiper__slide-location {
+  color: var(--main-darkblue);
+  font-size: 0.75rem;
+  margin: 0.25rem;
 }
 
 .swiper__slide-price {
@@ -789,32 +824,12 @@ button {
   background-color: var(--main-yellow);
   padding: 0.25rem 0.75rem;
   margin: 0;
-  margin-right: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 @media (min-width: 1024px) {
   .swiper__slide-price {
     font-size: 2rem;
-  }
-}
-
-.swiper__slide-type {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  color: var(--main-body);
-  padding: 0.5rem;
-  margin: 0;
-  background-color: var(--main-lightblue);
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 1rem;
-}
-
-@media (min-width: 1024px) {
-  .swiper__slide-type {
-    font-size: 1rem;
   }
 }
 
