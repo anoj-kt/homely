@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, query, where, orderBy, limit, startAfter } from 'firebase/firestore';
+import { collection, 
+         getDocs, 
+         query, 
+         where, 
+         orderBy, 
+         limit, 
+         startAfter } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import BeatLoader from 'react-spinners/BeatLoader';
 
