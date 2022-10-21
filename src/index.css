@@ -19,6 +19,7 @@ html::-webkit-scrollbar {
   --main-darkblue-transparent: 	hsla(199, 67%, 18%, 0.8);
   --main-body: hsl(348, 71%, 99%);
   --outline-grey: hsl(40, 4%, 88%);
+  --text-grey: hsl(30, 1%, 64%);
   --danger: 	hsl(354, 70%, 54%);
 }
 
@@ -40,6 +41,10 @@ a {
 button {
   outline: none;
   border: none;
+}
+
+li {
+  list-style: none;
 }
 
 /* =========================GENERAL========================= */
@@ -601,22 +606,26 @@ button {
 }
 
 .category__listing {
+  margin: 2.5rem 0;
+  border-radius: 10px;
+  border: 1px solid var(--outline-grey);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.category__listing-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  position: relative;
+  flex-direction: column;
+  height: 20rem;
+  
 }
 
-.category__listingLink {
-  display: contents;
-}
-
-.category__listingImg {
-  width: 30%;
-  height: 100px;
-  border-radius: 1.5rem;
+.category__listing-img {
+  width: 100%;
+  height: 55%;
   object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-position: center;
 }
 @media (min-width: 1024px) {
   .category__listingImg {
@@ -625,8 +634,9 @@ button {
   }
 }
 
-.category__listingDetails {
-  width: 65%;
+.category__listing-content {
+  width: 100%;
+  padding: 0.5rem
 }
 @media (min-width: 1024px) {
   .category__listingDetails {
@@ -634,38 +644,50 @@ button {
   }
 }
 
-.category__listingLocation {
-  font-weight: 600;
-  font-size: 0.7rem;
+.category__listing-location {
+  font-weight: 400;
+  font-size: 1rem;
   opacity: 0.8;
-  margin-bottom: 0;
+  margin: 0.25rem 0;
+  color: var(--text-grey);
 }
 
-.category__listingName {
+.category__listing-name {
   font-weight: 600;
   font-size: 1.25rem;
   margin: 0;
+  color: var(--main-darkblue);
 }
 
-.category__listingPrice {
+.category__listing-price {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00cc66;
+  color: var(--main-lightblue);
   margin-bottom: 0;
   display: flex;
   align-items: center;
 }
 
-.category__listingInfoDiv {
-  display: flex;
-  justify-content: space-between;
-  max-width: 275px;
+.category__listing-icon {
+  width: 1.5rem;
+  margin-right: 0.5rem;
 }
 
-.category__listingInfoText {
+.category__listing-infos {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+  border-top: 1px solid var(--outline-grey);
+}
+
+.category__listing-info {
+  display: flex;
+}
+
+.category__listing-info-text {
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .loadMore {
