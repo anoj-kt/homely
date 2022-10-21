@@ -544,28 +544,43 @@ button {
 
 .explore__categories {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 0.5rem 0;
 }
-.explore__categories a {
-  width: 48%;
+
+.explore__category {
+  background-color: var(--main-lightblue-transparent);
+  text-align: center;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+}
+
+.explore__category:hover {
+  background-color: var(--main-lightblue-hover);
 }
 
 .explore__category-img {
   width: 3rem;
 }
 
-.explore__categoryImg {
-  min-height: 115px;
-  height: 15vw;
-  width: 100%;
-  border-radius: 1.5rem;
-  object-fit: cover;
-  margin: 0 auto;
+.explore__category-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-.explore__categoryName {
-  font-weight: 500;
-  text-align: left;
+.explore__category-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-yellow-transparent);
+  text-align: center;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+}
+
+.explore__category-post img {
+  margin-right: 1rem;
 }
 
 /* =========================CATEGORY LISTINGS========================= */
