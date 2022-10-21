@@ -542,17 +542,24 @@ button {
   margin-top: 3rem;
 }
 
+.explore__categories-container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
 .explore__categories {
   display: flex;
-  justify-content: space-around;
-  margin: 0.5rem 0;
+  justify-content: space-between;
+  margin: 0.75rem 0;
+  gap: 1rem;
 }
 
 .explore__category {
   background-color: var(--main-lightblue-transparent);
   text-align: center;
+  flex-grow: 1;
   border-radius: 10px;
-  padding: 0.75rem 2rem;
+  padding: 1.25rem 3rem;
 }
 
 .explore__category:hover {
@@ -564,9 +571,10 @@ button {
 }
 
 .explore__category-name {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
+  color: var(--main-darkblue);
 }
 
 .explore__category-post {
@@ -576,7 +584,11 @@ button {
   background-color: var(--main-yellow-transparent);
   text-align: center;
   border-radius: 10px;
-  padding: 0.75rem 2rem;
+  padding: 1.25rem 3rem;
+}
+
+.explore__category-post:hover {
+  background-color: var(--main-yellow);
 }
 
 .explore__category-post img {
