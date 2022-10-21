@@ -616,7 +616,7 @@ li {
   display: flex;
   flex-direction: column;
   height: 20rem;
-  
+  position: relative;
 }
 
 .category__listing-img {
@@ -660,13 +660,16 @@ li {
 }
 
 .category__listing-price {
-  margin-top: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 0.5rem;
+  background-color: var(--main-body);
+  padding: 0.25rem;
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--main-lightblue);
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
+  margin: 0;
+  border-radius: 10px;
 }
 
 .category__listing-icon {

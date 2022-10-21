@@ -12,16 +12,17 @@ function ListingItem({listing, id, onEdit, onDelete}) {
     <li className="category__listing">
         <Link to={`/category/${listing.type}/${id}`} className="category__listing-container">
             <img src={listing.imageUrls[0]} alt={listing.name} className="category__listing-img" />
-            <div className="category__listing-content">
-                <p className="category__listing-name">{listing.name}</p>
-                <p className="category__listing-price">
+            <p className="category__listing-price">
                     {listing.offer 
                         ? listing.discountedPrice
                             .toLocaleString("de-DE")
                         : listing.regularPrice
                             .toLocaleString("de-DE")}
-                    € {listing.type === "rent" && " per month"}
+                    € {listing.type === "rent" && " /mo"}
                 </p>
+            <div className="category__listing-content">
+                <p className="category__listing-name">{listing.name}</p>
+                
                 <p className="category__listing-location">{listing.location}</p>
                 <div className="category__listing-infos">
                     <div className="category__listing-info">
