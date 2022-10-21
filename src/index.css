@@ -544,7 +544,7 @@ button {
 
 .explore__categories-container {
   width: 90vw;
-  margin: 0 auto;
+  margin: 3.5rem auto;
 }
 
 .explore__categories {
@@ -755,7 +755,7 @@ button {
 
 /* =========================SWIPER========================= */
 .swiper {
-  min-height: 240px;
+  min-height: 250px;
   height: 35vw;
 }
 
@@ -783,7 +783,7 @@ button {
 
 .swiper__slide-img-container {
   position: relative;
-  height: 50%;
+  height: 60%;
 }
 @media screen and (min-width: 480px) {
   .swiper__slide-img-container {
@@ -883,12 +883,11 @@ button {
 }
 
 .swiper__slide-price {
-  color: var(--main-darkblue);
+  color: var(--main-lightblue);
   font-size: 1rem;
   font-weight: 600;
   max-width: 90%;
-  background-color: var(--main-yellow);
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0;
   margin: 0;
   border-radius: 10px;
 }
