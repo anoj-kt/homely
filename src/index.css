@@ -550,6 +550,10 @@ button {
   width: 48%;
 }
 
+.explore__category-img {
+  width: 3rem;
+}
+
 .explore__categoryImg {
   min-height: 115px;
   height: 15vw;

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import rentIcon from '../assets/svg/rent-key.svg';
+import saleIcon from '../assets/svg/sale-house.svg';
 import rentCategoryImage from '../assets/jpg/rentCategoryImage.jpg';
 import sellCategoryImage from '../assets/jpg/sellCategoryImage.jpg';
 import Slider from '../components/Slider';
@@ -13,16 +15,15 @@ function Explore() {
         <main>
 
           <Slider/>
-
-          <p className="explore__categoryHeading">Categories</p>
-          <div className="explore__categories">
+          
+          <div>
             <Link to="/category/rent">
-              <img src={rentCategoryImage} alt="rent" className="explore__categoryImg" />
-              <p className="explore__categoryName">Properties for rent</p>
+              <img src={rentIcon} alt="Properties for rent" className="explore__category-img"/>
+              <p className="explore__category-name">Properties for rent</p>
             </Link>
             <Link to="/category/sale">
-              <img src={sellCategoryImage} alt="sell" className="explore__categoryImg" />
-              <p className="explore__categoryName">Properties for sale</p>
+              <img src={saleIcon} alt="Properties for sale" className="explore__category-img"/>
+              <p className="explore__category-name">Properties for sale</p>
             </Link>
           </div>
         </main>
