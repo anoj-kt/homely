@@ -12,6 +12,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 
 import { db } from '../firebase.config';
 import ListingItem from '../components/ListingItem';
+import downArrowIcon from '../assets/svg/arrow-down.svg';
 
 function Category() {
     const [listings, setListings] = useState(null);
@@ -110,7 +111,7 @@ function Category() {
                     </ul>
                 </main>
                 {lastFetchedListing && (
-                    <p className="loadMore" onClick={fetchMoreListings}>Load More</p>
+                    <p className="category__listing-load" onClick={fetchMoreListings}>Load More</p>
                 )}
                 </> 
                 : <p>No listings found for {params.categoryName}</p>}
