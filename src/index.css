@@ -693,17 +693,17 @@ li {
   font-size: 0.8rem;
 }
 
-.loadMore {
+.category__listing-load{
   cursor: pointer;
   width: 8rem;
   margin: 0 auto;
   text-align: center;
   padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--main-yellow-transparent);
+  color: var(--main-darkblue);
   font-weight: 600;
-  border-radius: 1rem;
-  opacity: 0.7;
+  border-radius: 10px;
+  opacity: 1;
   margin-top: 2rem;
 }
 
