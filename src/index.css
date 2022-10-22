@@ -615,7 +615,7 @@ li {
 .category__listing-container {
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  height: 18rem;
   position: relative;
 }
 
@@ -663,11 +663,11 @@ li {
   position: absolute;
   top: 1rem;
   left: 0.5rem;
-  background-color: var(--main-body);
+  background-color: white;
   padding: 0.25rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: var(--main-lightblue);
+  color: var(--main-darkblue);
   margin: 0;
   border-radius: 10px;
 }

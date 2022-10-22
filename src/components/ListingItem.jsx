@@ -14,9 +14,9 @@ function ListingItem({listing, id, onEdit, onDelete}) {
             <img src={listing.imageUrls[0]} alt={listing.name} className="category__listing-img" />
             <p className="category__listing-price">
                     {listing.offer 
-                        ? listing.discountedPrice
+                        ? Number(listing.discountedPrice)
                             .toLocaleString("de-DE")
-                        : listing.regularPrice
+                        : Number(listing.regularPrice)
                             .toLocaleString("de-DE")}
                     € {listing.type === "rent" && " /mo"}
                 </p>
