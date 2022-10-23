@@ -694,17 +694,33 @@ li {
 }
 
 .category__listing-load{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  width: 8rem;
+  width: 10rem;
   margin: 0 auto;
   text-align: center;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   background-color: var(--main-yellow-transparent);
   color: var(--main-darkblue);
   font-weight: 600;
   border-radius: 10px;
   opacity: 1;
   margin-top: 2rem;
+}
+
+.category__listing-load:hover {
+  background-color: var(--main-yellow);
+}
+
+.category__listing-load p {
+  margin: 0;
+}
+
+.category__listing-load img{
+  height: 1rem;
+  margin: 0 0.5rem;
 }
 
 

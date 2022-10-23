@@ -111,7 +111,10 @@ function Category() {
                     </ul>
                 </main>
                 {lastFetchedListing && (
-                    <p className="category__listing-load" onClick={fetchMoreListings}>Load More</p>
+                    <div className="category__listing-load">
+                        <p onClick={fetchMoreListings}>Load More</p>
+                        <img src={downArrowIcon} alt="Arrow down" />
+                    </div>
                 )}
                 </> 
                 : <p>No listings found for {params.categoryName}</p>}
