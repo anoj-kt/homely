@@ -626,6 +626,12 @@ li {
     height: 18rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .category__listing-container {
+    flex-direction: row;
+    height: 15rem;
+  }
+}
 
 .category__listing-img {
   width: 100%;
@@ -644,6 +650,14 @@ li {
 @media screen and (min-width: 440px) {
   .category__listing-img {
     height: 55%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .category__listing-img {
+    min-width: 60%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
   }
 }
 
@@ -703,6 +717,12 @@ li {
     justify-content: space-between;
   }
 }
+@media screen and (min-width: 768px) {
+  .category__listing-infos {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .category__listing-info {
   display: flex;
@@ -712,6 +732,12 @@ li {
 .category__listing-info-text {
   font-weight: 500;
   font-size: 0.8rem;
+}
+@media screen and (min-width: 768px){
+  .category__listing-info-text {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
 }
 
 .category__listing-load{
