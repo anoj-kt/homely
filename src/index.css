@@ -671,7 +671,12 @@ li {
   }
 }
 
-.category__listing-location {
+.category__listing-location img {
+  width: 1rem;
+  filter: invert(71%) sepia(0%) saturate(5390%) hue-rotate(81deg) brightness(86%) contrast(87%);
+}
+
+.category__listing-location p {
   font-weight: 400;
   font-size: 1rem;
   opacity: 0.8;

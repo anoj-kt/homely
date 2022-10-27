@@ -22,8 +22,10 @@ function ListingItem({listing, id, onEdit, onDelete}) {
                 </p>
             <div className="category__listing-content">
                 <p className="category__listing-name">{listing.name}</p>
-                
-                <p className="category__listing-location">{listing.location}</p>
+                <div className="category__listing-location">
+                    <img src={locationIcon} alt="location"/>
+                    <p>{listing.location}</p>
+                </div>
                 <div className="category__listing-infos">
                     <div className="category__listing-info">
                         <img src={bedroomIcon} alt="bedrooms" className="category__listing-icon"/>
