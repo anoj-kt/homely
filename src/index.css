@@ -30,7 +30,6 @@ body {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  max-width: 1440px;
 }
 
 a {
@@ -117,7 +116,7 @@ li {
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
+  background: var(--main-yellow);
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -550,8 +549,13 @@ li {
 }
 
 .explore__categories-container {
-  width: 90vw;
+  width: 90%;
   margin: 3.5rem auto;
+}
+@media screen and (min-width: 768px){
+  .explore__categories-container {
+    width: 50%;
+  }
 }
 
 .explore__categories {
@@ -606,9 +610,24 @@ li {
 .category__listings {
   padding: 0;
 }
+@media screen and (min-width: 768px) {
+  .category__listings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .category__listings {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
 
 .category__listing {
   margin: 2.5rem 0;
+  height: max-content;
   border-radius: 10px;
   border: 1px solid var(--outline-grey);
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
@@ -618,24 +637,13 @@ li {
 .category__listing-container {
   display: flex;
   flex-direction: column;
-  height: 25rem;
+  height: max-content;
   position: relative;
-}
-@media screen and (min-width: 440px) {
-  .category__listing-container {
-    height: 18rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .category__listing-container {
-    flex-direction: row;
-    height: 15rem;
-  }
 }
 
 .category__listing-img {
   width: 100%;
-  height: 47%;
+  height: 15rem;
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -643,21 +651,19 @@ li {
 }
 @media (min-width: 1024px) {
   .category__listing-img {
-    width: 19%;
+    width: 100%;
     height: 217px;
   }
 }
 @media screen and (min-width: 440px) {
   .category__listing-img {
-    height: 55%;
+    height: 10rem;
   }
 }
 @media screen and (min-width: 768px) {
   .category__listing-img {
     min-width: 60%;
-    height: 100%;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 0;
+    height: 10rem;
   }
 }
 
@@ -667,15 +673,27 @@ li {
 }
 @media (min-width: 1024px) {
   .category__listing-content {
-    width: 79%;
+    width: 100%;
   }
 }
 
 .category__listing-location {
+  display: flex;
+  align-items: start;
+  margin: 0.5rem 0;
+}
+
+.category__listing-location img {
+  width: 0.75rem;
+  margin: 0.25rem 0.25rem 0 0;
+  filter: invert(71%) sepia(0%) saturate(5390%) hue-rotate(81deg) brightness(86%) contrast(87%);
+}
+
+.category__listing-location p {
   font-weight: 400;
   font-size: 1rem;
   opacity: 0.8;
-  margin: 0.25rem 0;
+  margin: 0;
   color: var(--text-grey);
 }
 
@@ -720,7 +738,6 @@ li {
 @media screen and (min-width: 768px) {
   .category__listing-infos {
     display: flex;
-    flex-direction: column;
   }
 }
 
@@ -735,7 +752,7 @@ li {
 }
 @media screen and (min-width: 768px){
   .category__listing-info-text {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin: 0.5rem 0;
   }
 }
@@ -788,20 +805,20 @@ li {
 .form__inputName,
 .form__inputSmall,
 .form__inputFile,
-.form__buttonActive {
+.form__button--active {
   padding: 0.9rem 3rem;
   background-color: #ffffff;
   font-weight: 600;
-  border: none;
-  border-radius: 1rem;
+  border: 1px solid var(--outline-grey);
+  border-radius: 10px;
   font-size: 1rem;
   margin: 0.5rem 0.5rem 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form__buttonActive {
-  background-color: #00cc66;
+.form__button--active {
+  background-color: var(--main-lightblue);
   color: #ffffff;
 }
 
@@ -828,7 +845,7 @@ li {
   width: 100%;
 }
 .form__inputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: var(--main-lightblue);
   border: none;
   color: #ffffff;
   font-weight: 600;
@@ -958,15 +975,28 @@ li {
 }
 
 .swiper__slide-location {
+  display: flex;
+  align-items: start;
+  margin: 0.25rem 0;
+}
+
+.swiper__slide-location img {
+  width: 1rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+  filter: invert(71%) sepia(0%) saturate(5390%) hue-rotate(81deg) brightness(86%) contrast(87%);
+}
+
+.swiper__slide-location p {
   color: var(--main-darkblue);
   font-size: 1rem;
-  margin: 0.5rem 0;
+  margin: 0;
 }
 @media screen and (min-width: 1024px) {
-  .swiper__slide-location {
+  .swiper__slide-location p {
     color: var(--main-darkblue);
     font-size: 1.25rem;
-    margin: 0.5rem 0;
+    margin: 0;
   }
 }
 

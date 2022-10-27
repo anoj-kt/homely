@@ -5,7 +5,7 @@ import { ReactComponent as EditIcon} from '../assets/svg/editIcon.svg';
 import bedroomIcon from '../assets/svg/bedroom-icon.svg';
 import bathroomIcon from '../assets/svg/bathroom-icon.svg';
 import sqmeterIcon from '../assets/svg/sqmeter-icon.svg';
-
+import locationIcon from '../assets/svg/location-icon.svg'
 
 function ListingItem({listing, id, onEdit, onDelete}) {
   return (
@@ -22,8 +22,10 @@ function ListingItem({listing, id, onEdit, onDelete}) {
                 </p>
             <div className="category__listing-content">
                 <p className="category__listing-name">{listing.name}</p>
-                
-                <p className="category__listing-location">{listing.location}</p>
+                <div className="category__listing-location">
+                    <img src={locationIcon} alt="location"/>
+                    <p>{listing.location}</p>
+                </div>
                 <div className="category__listing-infos">
                     <div className="category__listing-info">
                         <img src={bedroomIcon} alt="bedrooms" className="category__listing-icon"/>

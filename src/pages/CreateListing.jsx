@@ -201,11 +201,11 @@ function CreateListing() {
             <form onSubmit={onSubmit}>
 
             {/* ===========Sell / Rent=========== */}
-                <label className="form__label">Sell / Rent</label>
+                <label className="form__label">I would like to</label>
                 <div className="form__buttons">
                     <button 
                         type="button" 
-                        className={type === "sale" ? "form__buttonActive" : "form__button"}
+                        className={type === "sale" ? "form__button--active" : "form__button"}
                         id="type"
                         value="sale"
                         onClick={onMutate}
@@ -214,7 +214,7 @@ function CreateListing() {
                     </button>
                     <button 
                         type="button" 
-                        className={type === "rent" ? "form__buttonActive" : "form__button"}
+                        className={type === "rent" ? "form__button--active" : "form__button"}
                         id="type"
                         value="rent"
                         onClick={onMutate}
@@ -224,7 +224,7 @@ function CreateListing() {
                 </div>
 
                 {/* ===========Name=========== */}
-                <label className="form__label">Name</label>
+                <label className="form__label">Give your property a name</label>
                 <input 
                     className="form__inputName"
                     type="text" 
@@ -271,7 +271,7 @@ function CreateListing() {
                 <div className="form__buttons">
                     <button 
                         type="button" 
-                        className={parking ? "form__buttonActive" : "form__button"}
+                        className={parking ? "form__button--active" : "form__button"}
                         id="parking"
                         value={true}
                         onClick={onMutate}
@@ -281,7 +281,7 @@ function CreateListing() {
                     </button>
                     <button 
                         type="button" 
-                        className={!parking && parking !== null? "form__buttonActive" : "form__button"}
+                        className={!parking && parking !== null? "form__button--active" : "form__button"}
                         id="parking"
                         value={false}
                         onClick={onMutate}
@@ -295,7 +295,7 @@ function CreateListing() {
                 <div className="form__buttons">
                     <button 
                         type="button" 
-                        className={furnished ? "form__buttonActive" : "form__button"}
+                        className={furnished ? "form__button--active" : "form__button"}
                         id="furnished"
                         value={true}
                         onClick={onMutate}
@@ -305,7 +305,7 @@ function CreateListing() {
                     </button>
                     <button 
                         type="button" 
-                        className={!furnished && furnished !== null? "form__buttonActive" : "form__button"}
+                        className={!furnished && furnished !== null? "form__button--active" : "form__button"}
                         id="furnished"
                         value={false}
                         onClick={onMutate}
@@ -359,7 +359,7 @@ function CreateListing() {
                 <div className="form__buttons">
                     <button
                         type="button" 
-                        className={offer ? "form__buttonActive" : "form__button"}
+                        className={offer ? "form__button--active" : "form__button"}
                         id="offer"
                         value={true}
                         onClick={onMutate}
@@ -368,7 +368,7 @@ function CreateListing() {
                     </button>
                     <button
                         type="button" 
-                        className={!offer && offer !== null ? "form__buttonActive" : "form__button"}
+                        className={!offer && offer !== null ? "form__button--active" : "form__button"}
                         id="offer"
                         value={false}
                         onClick={onMutate}
