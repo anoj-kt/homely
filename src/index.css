@@ -975,15 +975,28 @@ li {
 }
 
 .swiper__slide-location {
+  display: flex;
+  align-items: start;
+  margin: 0.25rem 0;
+}
+
+.swiper__slide-location img {
+  width: 1rem;
+  margin-top: 0.25rem;
+  margin-right: 0.5rem;
+  filter: invert(71%) sepia(0%) saturate(5390%) hue-rotate(81deg) brightness(86%) contrast(87%);
+}
+
+.swiper__slide-location p {
   color: var(--main-darkblue);
   font-size: 1rem;
-  margin: 0.5rem 0;
+  margin: 0;
 }
 @media screen and (min-width: 1024px) {
-  .swiper__slide-location {
+  .swiper__slide-location p {
     color: var(--main-darkblue);
     font-size: 1.25rem;
-    margin: 0.5rem 0;
+    margin: 0;
   }
 }
 

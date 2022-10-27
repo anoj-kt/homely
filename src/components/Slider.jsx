@@ -58,10 +58,10 @@ function Slider() {
                     modules={[Navigation, Autoplay, Pagination]} 
                     slidesPerView={1} 
                     pagination={{clickable:true}}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: true,
-                      }}
+                    // autoplay={{
+                    //     delay: 2500,
+                    //     disableOnInteraction: true,
+                    //   }}
                     loop={true}
                 >
                     {listings.map(({data, id}) => (
@@ -77,7 +77,10 @@ function Slider() {
                                     />
                                 </div>
                                 <div className="swiper__slide-loc-container">
-                                    <p className="swiper__slide-location">{data.location}</p>
+                                    <div className="swiper__slide-location">
+                                        <img src={locationIcon} alt="location" />
+                                        <p>{data.location}</p>
+                                    </div>
                                     <p className="swiper__slide-price">
                                         {data.offer 
                                             ? Number(data.discountedPrice).toLocaleString("de-DE")
