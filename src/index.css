@@ -552,6 +552,11 @@ li {
   width: 90%;
   margin: 3.5rem auto;
 }
+@media screen and (min-width: 768px){
+  .explore__categories-container {
+    width: 50%;
+  }
+}
 
 .explore__categories {
   display: flex;
