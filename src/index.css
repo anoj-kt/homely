@@ -116,7 +116,7 @@ li {
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
+  background: var(--main-yellow);
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -818,7 +818,7 @@ li {
   align-items: center;
 }
 .form__button--active {
-  background-color: var(--main-yellow);
+  background-color: var(--main-lightblue);
   color: #ffffff;
 }
 
@@ -845,7 +845,7 @@ li {
   width: 100%;
 }
 .form__inputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: var(--main-lightblue);
   border: none;
   color: #ffffff;
   font-weight: 600;
