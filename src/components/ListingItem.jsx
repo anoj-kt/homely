@@ -5,7 +5,7 @@ import { ReactComponent as EditIcon} from '../assets/svg/editIcon.svg';
 import bedroomIcon from '../assets/svg/bedroom-icon.svg';
 import bathroomIcon from '../assets/svg/bathroom-icon.svg';
 import sqmeterIcon from '../assets/svg/sqmeter-icon.svg';
-
+import locationIcon from '../assets/svg/location-icon.svg'
 
 function ListingItem({listing, id, onEdit, onDelete}) {
   return (

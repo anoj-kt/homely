@@ -9,7 +9,7 @@ import BeatLoader from 'react-spinners/BeatLoader'
 import { async } from '@firebase/util';
 
 import { db } from '../firebase.config';
-import locationIcon from '../assets/svg/location.svg'
+import locationIcon from '../assets/svg/location-icon.svg'
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar, A11y ])
 
