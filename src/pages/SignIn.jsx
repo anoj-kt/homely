@@ -78,7 +78,7 @@ function SignIn() {
           Forgot Password ?
         </Link>
           <button className="primaryButton">
-            Log in
+            Login
           </button>
       </form>
 
