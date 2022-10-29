@@ -52,9 +52,9 @@ function SignUp() {
 
   return (
     <>
-    <div className="page__container">
+    <div className="login__page">
       <header>
-        <p className="page__header">Welcome back!</p>
+        <p className="page__header">Sign Up!</p>
       </header>
 
       <form onSubmit={onSubmit}>
@@ -90,28 +90,15 @@ function SignUp() {
             onClick={() => setShowPassword(prev => !prev)}
           />
         </div>
-        <Link 
-          to="/forgot-password"
-          className="forgotPasswordLink"
-        >
-          Forgot Password
-        </Link>
-        <div className="signUp__div">
-          <p className="signUp__text">Sign Up</p>
-          <button className="signUp__button">
-            <ArrowRightIcon 
-              fill="#ffffff"
-              width="34px"
-              height="34px"
-            />
+          <button className="primaryButton">
+            Sign Up
           </button>
-        </div>
       </form>
 
       <OAuth/>
 
       <Link to="/sign-in" className="signUpLink">
-        Sign In instead
+        Already have an account? Log in here!
       </Link>
     </div>
     </>

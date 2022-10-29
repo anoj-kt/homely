@@ -45,6 +45,7 @@ function CreateListing() {
                     setFormData({...formData, userRef: user.uid})
                 } else {
                     navigate('/sign-in')
+                    toast.warning('You need to be signed in to post!')
                 }
             })
         }
@@ -190,7 +191,19 @@ function CreateListing() {
     }
 
     if(isLoading) {
-        return <BeatLoader color="#00cc66"/>
+        return (
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignContent: "center",
+                height: "calc(100vh - 70px)", 
+                width: "100%", 
+                }} >
+                <p className="page__header">Uploading...</p>
+                <BeatLoader color="hsl(42, 94%, 54%)"/>
+            </div>
+        )
     }
 
   return (
