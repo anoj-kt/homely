@@ -84,7 +84,7 @@ li {
 .page__container,
 .offers,
 .profile,
-.listing__details,
+.listing,
 .category,
 .explore {
   margin: 70px 1rem 1rem;
@@ -93,7 +93,7 @@ li {
   .page__container,
   .offers,
   .profile,
-  .listing__details,
+  .listing,
   .category,
   .explore {
     margin: 80px 1rem 1rem;
@@ -1071,7 +1071,7 @@ li {
 .icon__share {
   cursor: pointer;
   position: fixed;
-  top: 3%;
+  top: 12%;
   right: 5%;
   z-index: 2;
   background-color: #ffffff;
@@ -1085,7 +1085,7 @@ li {
 
 .link--copied {
   position: fixed;
-  top: 9%;
+  top: 17%;
   right: 5%;
   z-index: 2;
   background-color: #ffffff;
