@@ -6,6 +6,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 
 import { db } from '../firebase.config';
 import ListingItem from '../components/ListingItem';
+import GoBackButton from '../components/GoBackButton';
 
 function Offers() {
     const [listings, setListings] = useState(null);
@@ -50,7 +51,10 @@ function Offers() {
     return (
         <div className="category">
             <header>
-                <p className="page__header">Offers</p>
+                <div className="page__header-container">
+                    <GoBackButton />
+                    <p className="page__header">Offers</p>
+                </div>
             </header>
 
             {isLoading ? 

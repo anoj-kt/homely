@@ -14,6 +14,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 
 import { db } from '../firebase.config';
 import shareIcon from '../assets/svg/shareIcon.svg'
+import GoBackButton from '../components/GoBackButton';
 
 SwiperCore.use([ Navigation, Pagination, Scrollbar, A11y ])
 
@@ -46,7 +47,7 @@ function Listing() {
     }
 
     return (
-       <main>
+       <main className="listing">
         <Swiper slidesPerView={1} pagination={{clickable:true}}>
             {listing.imageUrls.map((url, index) => (
                 <SwiperSlide key={index}>
@@ -60,7 +61,7 @@ function Listing() {
                 </SwiperSlide>
             ))}
         </Swiper>
-
+        <GoBackButton style="icon__goback-listing"/>
         <div className="icon__share" onClick={() => {
             navigator.clipboard.writeText(window.location.href)
             setShareLinkCopied(true)
@@ -95,7 +96,7 @@ function Listing() {
                         : "1 Bathroom"
                     }
                 </li>
-                <li>{listing.parking && 'Parking available'}</li>
+                <li>{listing.parking ? 'Parking available' : 'Parking not available'}</li>
                 <li>{listing.furnished && 'Furnished property'}</li>
             </ul>
 

@@ -12,6 +12,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 
 import { db } from '../firebase.config';
 import ListingItem from '../components/ListingItem';
+import GoBackButton from '../components/GoBackButton';
 import downArrowIcon from '../assets/svg/arrow-down.svg';
 
 function Category() {
@@ -93,10 +94,13 @@ function Category() {
     return (
         <div className="category">
             <header>
-                <p className="page__header">
-                    Properties for 
-                    {params.categoryName === 'rent' ? ' rent' : ' sale'}
-                </p>
+                <div className="page__header-container">
+                    <GoBackButton />
+                    <p className="page__header">
+                        Properties for 
+                        {params.categoryName === 'rent' ? ' rent' : ' sale'}
+                    </p>
+                </div>
             </header>
 
             {isLoading ? 
@@ -111,8 +115,8 @@ function Category() {
                     </ul>
                 </main>
                 {lastFetchedListing && (
-                    <div className="category__listing-load">
-                        <p onClick={fetchMoreListings}>Load More</p>
+                    <div className="category__listing-load" onClick={fetchMoreListings}>
+                        <p>Load More</p>
                         <img src={downArrowIcon} alt="Arrow down" />
                     </div>
                 )}

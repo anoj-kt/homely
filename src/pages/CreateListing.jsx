@@ -21,6 +21,7 @@ function CreateListing() {
         bathrooms: 1,
         parking: false,
         furnished: false,
+        sqareMeter: 1,
         address: '',
         offer: false,
         regularPrice: 0,
@@ -30,7 +31,7 @@ function CreateListing() {
         longitude: 0
     })
 
-    const { type, name, bedrooms, bathrooms, parking, furnished, address, offer, regularPrice, discountedPrice, images, latitude, longitude} = formData
+    const { type, name, bedrooms, bathrooms, squareMeter, parking, furnished, address, offer, regularPrice, discountedPrice, images, latitude, longitude} = formData
 
     // ===========VARIABLES===========
     const auth = getAuth()
@@ -195,10 +196,10 @@ function CreateListing() {
   return (
     <div className="profile">
         <header>
-            <p className="page__header">Create a listing</p>
+            <p className="page__header page__header-postproperty">Post your property</p>
         </header>
         <main>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="form__post-property">
 
             {/* ===========Sell / Rent=========== */}
                 <label className="form__label">I would like to</label>
@@ -237,7 +238,7 @@ function CreateListing() {
                 />
 
                 {/* ===========Rooms=========== */}
-                <div className="form__rooms flex">
+                <div className="form__rooms">
                     <div>
                         <label className="form__label">Bedrooms</label>
                         <input 
@@ -260,6 +261,19 @@ function CreateListing() {
                             value={bathrooms}
                             onChange={onMutate}
                             max="50"
+                            min="1"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label className="form__label">Square Meters</label>
+                        <input 
+                            className="form__inputSmall"
+                            type="number" 
+                            id="squareMeter"
+                            value={squareMeter}
+                            onChange={onMutate}
+                            max="100000"
                             min="1"
                             required
                         />
@@ -313,13 +327,14 @@ function CreateListing() {
                         No
                     </button>
                 </div>
-
+                    
                 {/* ===========Address=========== */}
                 <label className="form__label">Address</label>
                 <textarea
                     className="form__inputAddress"
                     type="text"
                     id="address"
+                    rows={4}
                     value={address}
                     onChange={onMutate}
                     required
