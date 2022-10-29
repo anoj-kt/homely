@@ -12,6 +12,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 
 import { db } from '../firebase.config';
 import ListingItem from '../components/ListingItem';
+import GoBackButton from '../components/GoBackButton';
 import downArrowIcon from '../assets/svg/arrow-down.svg';
 
 function Category() {
@@ -98,6 +99,7 @@ function Category() {
                     {params.categoryName === 'rent' ? ' rent' : ' sale'}
                 </p>
             </header>
+            <GoBackButton />
 
             {isLoading ? 
             <BeatLoader color="hsl(42, 94%, 54%)"/> 

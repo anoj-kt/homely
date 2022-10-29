@@ -129,6 +129,10 @@ li {
   justify-content: center;
 }
 
+.icon__goback {
+  width: 1rem;
+}
+
 /* =========================NAVBAR========================= */
 .navbar__container {
   background-color: var(--main-body);
