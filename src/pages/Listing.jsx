@@ -96,7 +96,7 @@ function Listing() {
                         : "1 Bathroom"
                     }
                 </li>
-                <li>{listing.parking && 'Parking available'}</li>
+                <li>{listing.parking ? 'Parking available' : 'Parking not available'}</li>
                 <li>{listing.furnished && 'Furnished property'}</li>
             </ul>
 

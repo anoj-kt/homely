@@ -176,7 +176,7 @@ li {
   align-items: flex-start;
   height: 3.5rem;
   width: 100%;
-  z-index: 10;
+  z-index: 2000;
 }
 
 .navbar__logo-container {
@@ -1109,6 +1109,7 @@ li {
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: var(--main-darkblue);
 }
 
 .leaflet__container {
@@ -1126,13 +1127,14 @@ li {
 .listing__location {
   margin-top: 0;
   font-weight: 600;
+  color: var(--text-grey);
 }
 
 .listing__type {
   padding: 0.25rem 0.5rem;
-  background-color: #00cc66;
+  background-color: var(--main-lightblue-transparent);
   color: #ffffff;
-  border-radius: 2rem;
+  border-radius: 10px;
   display: inline;
   font-weight: 600;
   font-size: 0.8rem;
