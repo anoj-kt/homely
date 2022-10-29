@@ -41,7 +41,7 @@ function SignIn() {
 
   return (
     <>
-    <div className="page__container">
+    <div className="login__page">
       <header>
         <p className="page__header">Welcome back!</p>
       </header>
@@ -75,24 +75,17 @@ function SignIn() {
           to="/forgot-password"
           className="forgotPasswordLink"
         >
-          Forgot Password
+          Forgot Password ?
         </Link>
-        <div className="signIn__div">
-          <p className="signIn__text">Sign In</p>
-          <button className="signIn__button">
-            <ArrowRightIcon 
-              fill="#ffffff"
-              width="34px"
-              height="34px"
-            />
+          <button className="primaryButton">
+            Log in
           </button>
-        </div>
       </form>
 
       <OAuth/>
 
       <Link to="/sign-up" className="signUpLink">
-        Sign Up instead
+        Dont't have an account? Sign up here!
       </Link>
     </div>
     </>
