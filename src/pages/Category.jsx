@@ -111,8 +111,8 @@ function Category() {
                     </ul>
                 </main>
                 {lastFetchedListing && (
-                    <div className="category__listing-load">
-                        <p onClick={fetchMoreListings}>Load More</p>
+                    <div className="category__listing-load" onClick={fetchMoreListings}>
+                        <p>Load More</p>
                         <img src={downArrowIcon} alt="Arrow down" />
                     </div>
                 )}
