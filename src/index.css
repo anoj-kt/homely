@@ -58,6 +58,18 @@ li {
   width: 40%;
 }
 
+.page__header-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+}
+
+.page__header-container .page__header {
+  margin-top: 0;
+  justify-self: center;
+}
+
 .page__header {
   font-size: 1rem;
   font-weight: 600;
@@ -130,7 +142,14 @@ li {
 }
 
 .icon__goback {
-  width: 1rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  padding: 6px;
+  border-radius: 50%;
+  border: 1px groove var(--outline-grey);
+  background-color: white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* =========================NAVBAR========================= */
@@ -864,6 +883,7 @@ li {
 
 /* =========================SWIPER========================= */
 .swiper {
+  cursor: pointer;
   min-height: 300px;
   height: 35vw;
   background-color: white;

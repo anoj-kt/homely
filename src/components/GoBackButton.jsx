@@ -10,7 +10,12 @@ function GoBackButton() {
     }
 
     return (
-        <img src={arrowLeftIcon} alt="" className="icon__goback" />
+        <img 
+            src={arrowLeftIcon} 
+            alt="Go back" 
+            className="icon__goback" 
+            onClick={onClick}
+        />
     )
 }
 

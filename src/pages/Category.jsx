@@ -94,12 +94,14 @@ function Category() {
     return (
         <div className="category">
             <header>
-                <p className="page__header">
-                    Properties for 
-                    {params.categoryName === 'rent' ? ' rent' : ' sale'}
-                </p>
+                <div className="page__header-container">
+                    <GoBackButton />
+                    <p className="page__header">
+                        Properties for 
+                        {params.categoryName === 'rent' ? ' rent' : ' sale'}
+                    </p>
+                </div>
             </header>
-            <GoBackButton />
 
             {isLoading ? 
             <BeatLoader color="hsl(42, 94%, 54%)"/> 
