@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 
 import arrowLeftIcon from '../assets/svg/arrow-left.svg'
 
-function GoBackButton() {
+function GoBackButton({style}) {
     const navigate = useNavigate();
 
     const onClick = () => {
@@ -13,9 +13,10 @@ function GoBackButton() {
         <img 
             src={arrowLeftIcon} 
             alt="Go back" 
-            className="icon__goback" 
+            className={`icon__goback ${style}`}
             onClick={onClick}
         />
+        
     )
 }
 

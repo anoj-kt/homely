@@ -157,6 +157,13 @@ li {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
+.icon__goback-listing {
+  position: absolute;
+  top: 12%;
+  z-index: 1;
+  left: 3%;
+}
+
 /* =========================NAVBAR========================= */
 .navbar__container {
   background-color: var(--main-body);

@@ -61,7 +61,7 @@ function Listing() {
                 </SwiperSlide>
             ))}
         </Swiper>
-
+        <GoBackButton style="icon__goback-listing"/>
         <div className="icon__share" onClick={() => {
             navigator.clipboard.writeText(window.location.href)
             setShareLinkCopied(true)
