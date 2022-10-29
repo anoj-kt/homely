@@ -76,6 +76,11 @@ li {
   color: var(--main-darkblue);
 }
 
+.page__header-postproperty {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+
 .page__container,
 .offers,
 .profile,
@@ -812,14 +817,26 @@ li {
 
 
 /* =========================CREATE LISTING========================= */
+.form__post-property {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .form__label {
   font-weight: 600;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   display: block;
 }
 
 .form__buttons {
   display: flex;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form__inputAddress {
+  resize: none;
 }
 
 .form__button,
@@ -839,6 +856,8 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 600px;
 }
 .form__button--active {
   background-color: var(--main-lightblue);
@@ -849,13 +868,19 @@ li {
   display: flex;
 }
 
+.form__rooms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: start;
+}
+
 .form__priceDiv {
   display: flex;
   align-items: center;
 }
 
 .form__priceText {
-  margin-left: -1.5rem;
   font-weight: 600;
 }
 
