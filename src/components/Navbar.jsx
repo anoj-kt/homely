@@ -20,7 +20,7 @@ function Navbar() {
     }
 
     return (
-      <nav className="navbar__container">
+      <nav className={shadow ? "navbar__container navbar--shadow" : "navbar__container"}>
         <div className="navbar__logo-container">
             <img className="navbar__logo" src={logo} alt="logo" onClick={() => navigate('/')}/>
             <img 
