@@ -1,7 +1,6 @@
 import globeIcon from '../assets/svg/globe.svg';
 import linkedInIcon from '../assets/svg/linkedin.svg';
 import githubIcon from '../assets/svg/github.svg';
-import footerWave from '../assets/svg/footer-wave.svg'
 
 function Footer() {
   return (
@@ -10,9 +9,9 @@ function Footer() {
         <div className="footer__content">
           <p>Developed by Anoj</p>
           <div className="footer__icons">
-              <a href="https://anoj-kt.github.io/anojkrishna" target="_blank"><img src={globeIcon} alt="Anoj website" className="footer__icon" /></a>
-              <a href="https://www.linkedin.com/in/anojkrishna" target="_blank"><img src={linkedInIcon} alt="Anoj website" className="footer__icon" /></a>
-              <a href="https://github.com/anoj-kt" target="_blank"><img src={githubIcon} alt="Anoj website" className="footer__icon" /></a>
+              <a href="https://anoj-kt.github.io/anojkrishna" target="_blank" rel="noreferrer"><img src={globeIcon} alt="Anoj website" className="footer__icon" /></a>
+              <a href="https://www.linkedin.com/in/anojkrishna" target="_blank" rel="noreferrer"><img src={linkedInIcon} alt="Anoj website" className="footer__icon" /></a>
+              <a href="https://github.com/anoj-kt" target="_blank" rel="noreferrer"><img src={githubIcon} alt="Anoj website" className="footer__icon" /></a>
           </div>
         </div>
         

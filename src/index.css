@@ -60,8 +60,8 @@ li {
 
 .page__header-container {
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 1rem;
 }
 
@@ -321,7 +321,7 @@ li {
   .navbar__links, .navbar__links--close {
     background-color: inherit;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     height: inherit;
     width: 70%;
@@ -739,6 +739,7 @@ li {
 
 .category__listing:hover {
   margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .category__listing-container {
@@ -786,7 +787,7 @@ li {
 
 .category__listing-location {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin: 0.5rem 0;
 }
 
@@ -950,7 +951,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .form__priceDiv {
@@ -1092,7 +1093,7 @@ li {
 .swiper__slide-loc-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
 }
 @media screen and (min-width: 480px) {
@@ -1106,7 +1107,7 @@ li {
 
 .swiper__slide-location {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin: 0.25rem 0;
 }
 
