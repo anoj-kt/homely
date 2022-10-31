@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import UseScrollPosition from '../hooks/UseScrollPosition';
 import logo from '../assets/logo/logo-main.svg';
 import menuOpen from '../assets/svg/nav-hamburger-bars.svg';
 import menuClose from '../assets/svg/close-x.svg';
@@ -9,6 +10,8 @@ function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const navigate = useNavigate();
+    const shadow = UseScrollPosition();
+    console.log(shadow)
 
     const closeNavbarHandler = () => {
         if(isMenuOpen) {
@@ -17,7 +20,7 @@ function Navbar() {
     }
 
     return (
-      <nav className="navbar__container">
+      <nav className={shadow ? "navbar__container navbar--shadow" : "navbar__container"}>
         <div className="navbar__logo-container">
             <img className="navbar__logo" src={logo} alt="logo" onClick={() => navigate('/')}/>
             <img 

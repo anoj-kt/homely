@@ -73,7 +73,7 @@ function Slider() {
                                     <img 
                                         className="swiper__slide-img" 
                                         src={data.imageUrls[0]} 
-                                        alt="Property image" 
+                                        alt="Property" 
                                     />
                                 </div>
                                 <div className="swiper__slide-loc-container">

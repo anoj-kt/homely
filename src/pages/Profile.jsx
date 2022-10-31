@@ -97,7 +97,6 @@ function Profile() {
     <div className="profile">
       <header className="profile__header">
         <p className="page__header">My Profile</p>
-        <button type="button" className="logOut" onClick={logOut}>Log out</button>
       </header>
       <main>
         <div className="profile__detailsDiv">
@@ -111,24 +110,27 @@ function Profile() {
         </div>
         <div className="profile__card">
           <form>
+            <label className="form__label">Name</label>
             <input 
               type="text"
               id="name"
-              className={changeDetails ? "profile__nameActive" : "profile__name"}
+              className={changeDetails ? "profile__name--active" : "profile__name"}
               disabled={!changeDetails}
               value={name}
               onChange={onChange}
             />
+            <label className="form__label">Email</label>
             <input 
               type="email"
               id="email"
-              className={changeDetails ? "profile__emailActive" : "profile__email"}
+              className="profile__email"
               disabled={!changeDetails}
               value={email}
               onChange={onChange}
             />
           </form>
         </div>
+        <button type="button" className="logOut" onClick={logOut}>Log out</button>
         <Link to="/create-listing" className="create__listing">
           <img src={homeIcon} alt="home" />
           <p>Sell or rent your home</p>

@@ -60,8 +60,8 @@ li {
 
 .page__header-container {
   display: flex;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 1rem;
 }
 
@@ -157,6 +157,12 @@ li {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
+.icon__goback:hover {
+  padding: 2px;
+  background-color: whitesmoke;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
 .icon__goback-listing {
   position: absolute;
   top: 12%;
@@ -177,6 +183,11 @@ li {
   height: 3.5rem;
   width: 100%;
   z-index: 2000;
+  transition: 0.3s;
+}
+
+.navbar--shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .navbar__logo-container {
@@ -188,7 +199,7 @@ li {
 }
 
 .navbar__logo {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   height: 70%;
   cursor: pointer;
 }
@@ -310,7 +321,7 @@ li {
   .navbar__links, .navbar__links--close {
     background-color: inherit;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     height: inherit;
     width: 70%;
@@ -328,12 +339,13 @@ li {
     padding: 1rem;
     font-size: 1.25rem;
     color: var(--main-darkblue);
+    transition: 0.3s;
   }
 
   .navbar__links li:hover {
     color: var(--main-yellow);
     background-color: inherit;
-    transition: color 0.3s;
+    padding-top: 0.5rem;
   }
 
 }
@@ -352,7 +364,6 @@ li {
 
 .email__input {
   margin-bottom: 2rem;
-  /* background: url('./assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat; */
 }
 
 .password__inputDiv {
@@ -361,7 +372,6 @@ li {
 
 .password__input {
   margin-bottom: 3rem;
-  /* background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat; */
 }
 
 .showPassword {
@@ -465,7 +475,6 @@ li {
 
 .name__input {
   margin-bottom: 2rem;
-  /* background: url('./assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat; */
 }
 
 /* =========================PROFILE========================= */
@@ -481,13 +490,14 @@ li {
 
 .logOut {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #00cc66;
+  color: var(--danger);
+  background-color: var(--main-body-opposite);
   padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--outline-grey);
 }
 
 .profile__detailsDiv {
@@ -503,7 +513,7 @@ li {
 .changeDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: var(--text-grey);
 }
 
 .profile__card {
@@ -525,8 +535,14 @@ li {
   font-weight: 600;
   width: 100%;
 }
-.profile__nameActive {
-  background-color: rgba(44, 44, 44, 0.1);
+
+.profile__name--active {
+  font-weight: 600;
+  outline: none;
+  border: 1px solid var(--outline-grey);
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .profile__email,
@@ -579,7 +595,6 @@ li {
   }
 }
 
-
 .icon__edit {
   width: 2rem;
   height: 2rem;
@@ -626,7 +641,7 @@ li {
 
 .explore__categories-container {
   width: 90%;
-  margin: 3.5rem auto;
+  margin: 3.5rem auto 0;
 }
 @media screen and (min-width: 768px){
   .explore__categories-container {
@@ -647,6 +662,15 @@ li {
   flex-grow: 1;
   border-radius: 10px;
   padding: 1.25rem 3rem;
+}
+@media screen and (min-width: 1024px) {
+  .explore__category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 3rem;
+  }
 }
 
 .explore__category:hover {
@@ -709,6 +733,13 @@ li {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   background-color: white;
   position: relative;
+  padding: 0rem;
+  transition: 0.3s;
+}
+
+.category__listing:hover {
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .category__listing-container {
@@ -756,7 +787,7 @@ li {
 
 .category__listing-location {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin: 0.5rem 0;
 }
 
@@ -829,7 +860,6 @@ li {
 }
 @media screen and (min-width: 768px){
   .category__listing-info-text {
-    /* font-size: 1rem; */
     margin: 0.5rem 0;
   }
 }
@@ -921,7 +951,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .form__priceDiv {
@@ -1063,7 +1093,7 @@ li {
 .swiper__slide-loc-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
 }
 @media screen and (min-width: 480px) {
@@ -1077,7 +1107,7 @@ li {
 
 .swiper__slide-location {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin: 0.25rem 0;
 }
 
@@ -1237,4 +1267,34 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* =========================FOOTER========================= */
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+}
 
+.footer__content {
+  background-color: var(--main-darkblue);
+  text-align: center;
+}
+
+.footer__content p{
+  margin: 0;
+}
+
+.footer__icons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+.footer__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.5rem;
+  filter: brightness(0) invert(1);
+}

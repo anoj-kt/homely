@@ -1,8 +1,7 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
-import logo from './assets/logo/logo-main.svg';
 import Navbar from './components/Navbar';
 import Explore from './pages/Explore';
 import Offers from './pages/Offers';
@@ -16,6 +15,7 @@ import CreateListing from './pages/CreateListing';
 import EditListing from './pages/EditListing';
 import Listing from './pages/Listing';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
         <Route path="/category/:categoryName/:listingId" element={<Listing/>}/>
         <Route path="/contact/:ownerId" element={<Contact/>}/>
       </Routes>
+      <Footer />
     </Router>
     <ToastContainer />
     </>
