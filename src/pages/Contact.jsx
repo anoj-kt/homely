@@ -51,6 +51,7 @@ function Contact() {
                                 id="message" 
                                 value={message}
                                 className="textarea"
+                                rows={10}
                                 onChange={onChange}
                             ></textarea>
                         </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/bundle';
 import { getDoc, doc } from 'firebase/firestore';
@@ -48,7 +48,17 @@ function Listing() {
 
     return (
        <main className="listing">
-        <Swiper slidesPerView={1} pagination={{clickable:true}}>
+        <Swiper 
+             navigation={true} 
+             modules={[Navigation, Autoplay, Pagination]} 
+             slidesPerView={1} 
+             pagination={{clickable:true}}
+             autoplay={{
+                 delay: 3000,
+                 disableOnInteraction: true,
+               }}
+             loop={true}
+        >
             {listing.imageUrls.map((url, index) => (
                 <SwiperSlide key={index}>
                     <div 

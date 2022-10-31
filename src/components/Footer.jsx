@@ -10,9 +10,9 @@ function Footer() {
         <div className="footer__content">
           <p>Developed by Anoj</p>
           <div className="footer__icons">
-              <a href="https://anoj-kt.github.io/anojkrishna" target="blank"><img src={globeIcon} alt="Anoj website" className="footer__icon" /></a>
-              <a href="https://www.linkedin.com/in/anojkrishna" target="blank"><img src={linkedInIcon} alt="Anoj website" className="footer__icon" /></a>
-              <a href="https://github.com/anoj-kt" target="blank"><img src={githubIcon} alt="Anoj website" className="footer__icon" /></a>
+              <a href="https://anoj-kt.github.io/anojkrishna" target="_blank"><img src={globeIcon} alt="Anoj website" className="footer__icon" /></a>
+              <a href="https://www.linkedin.com/in/anojkrishna" target="_blank"><img src={linkedInIcon} alt="Anoj website" className="footer__icon" /></a>
+              <a href="https://github.com/anoj-kt" target="_blank"><img src={githubIcon} alt="Anoj website" className="footer__icon" /></a>
           </div>
         </div>
         

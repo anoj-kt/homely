@@ -157,6 +157,12 @@ li {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
+.icon__goback:hover {
+  padding: 2px;
+  background-color: whitesmoke;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
 .icon__goback-listing {
   position: absolute;
   top: 12%;
@@ -333,12 +339,13 @@ li {
     padding: 1rem;
     font-size: 1.25rem;
     color: var(--main-darkblue);
+    transition: 0.3s;
   }
 
   .navbar__links li:hover {
     color: var(--main-yellow);
     background-color: inherit;
-    transition: color 0.3s;
+    padding-top: 0.5rem;
   }
 
 }
@@ -483,13 +490,14 @@ li {
 
 .logOut {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #00cc66;
+  color: var(--danger);
+  background-color: var(--main-body-opposite);
   padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--outline-grey);
 }
 
 .profile__detailsDiv {
@@ -505,7 +513,7 @@ li {
 .changeDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: var(--text-grey);
 }
 
 .profile__card {
@@ -527,8 +535,14 @@ li {
   font-weight: 600;
   width: 100%;
 }
-.profile__nameActive {
-  background-color: rgba(44, 44, 44, 0.1);
+
+.profile__name--active {
+  font-weight: 600;
+  outline: none;
+  border: 1px solid var(--outline-grey);
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .profile__email,
@@ -627,7 +641,7 @@ li {
 
 .explore__categories-container {
   width: 90%;
-  margin: 3.5rem auto;
+  margin: 3.5rem auto 0;
 }
 @media screen and (min-width: 768px){
   .explore__categories-container {
@@ -719,6 +733,12 @@ li {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   background-color: white;
   position: relative;
+  padding: 0rem;
+  transition: 0.3s;
+}
+
+.category__listing:hover {
+  margin-top: 1.5rem;
 }
 
 .category__listing-container {
