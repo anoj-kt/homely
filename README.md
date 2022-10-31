@@ -1,4 +1,4 @@
-# Homely (Project still under development)
+# Homely
 A platform to search or list properties for rent or sale.
 
 ## Language/Framework used
