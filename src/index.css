@@ -648,6 +648,15 @@ li {
   border-radius: 10px;
   padding: 1.25rem 3rem;
 }
+@media screen and (min-width: 1024px) {
+  .explore__category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 3rem;
+  }
+}
 
 .explore__category:hover {
   background-color: var(--main-lightblue-hover);
