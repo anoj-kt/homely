@@ -84,7 +84,7 @@ function SignIn() {
       <OAuth/>
 
       <Link to="/sign-up" className="signUpLink">
-        Dont't have an account? Sign up here!
+        Don't have an account? Sign up here!
       </Link>
     </div>
     </>
