@@ -11,7 +11,6 @@ function Navbar() {
 
     const navigate = useNavigate();
     const shadow = UseScrollPosition();
-    console.log(shadow)
 
     const closeNavbarHandler = () => {
         if(isMenuOpen) {
