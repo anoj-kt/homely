@@ -58,7 +58,7 @@ function Offers() {
             </header>
 
             {isLoading ? 
-            <BeatLoader/> 
+            <BeatLoader style={{display: "flex", justifyContent: "center"}} color="hsl(42, 94%, 54%)"/> 
             : listings && listings.length > 0 ? 
                 <>
                 <main>

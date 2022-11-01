@@ -26,7 +26,7 @@ function ForgotPassword() {
   }
 
   return (
-    <div className="page__container">
+    <div className="login__page">
       <header>
         <p className="page__header">Forgot Password</p>
       </header>
@@ -43,12 +43,9 @@ function ForgotPassword() {
           <Link className="forgotPasswordLink" to="/sign-in">
             Sign In
           </Link>
-          <div className="signIn__div">
-            <div className="signIn__text">Send Reset Link</div>
-            <button className="signIn__button">
-              <ArrowRightIcon fill="#ffffff" width="34px" height="34px"/>
+            <button className="primaryButton">
+              Send Reset Link
             </button>
-          </div>
         </form>
       </main>
     </div>
