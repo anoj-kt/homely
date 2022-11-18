@@ -35,7 +35,7 @@ You can view the tech stack used for this project [below](#tech-stack-used). <br
 ## Other dependencies/libraries used
 - Leaflet JS - map feature.
 - React-spinners - used for as loading component.
-- React-toastify - used for displaying error/success/warning messages as popups.
+- React-toastify - used for displaying error / success / warning messages as popups.
 - Swiper - for image carousel.
 - Uuid - for creating unique IDs.
 <br/>
