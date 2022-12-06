@@ -29,6 +29,7 @@ You can view the tech stack used for this project [below](#tech-stack-used). <br
 - User can contact property owner via email.
 
 ## Currently working on
+- Restructuring files.
 - Messaging feature between users via app.
 - Adding a 'favorites' list for users.
 
