@@ -43,7 +43,7 @@ function Listing() {
     }, [navigate, params.listingId])
 
     if(isLoading) {
-        return <BeatLoader color="#00cc66"/>
+        return <BeatLoader color="hsl(42, 94%, 54%)"/>
     }
 
     return (
