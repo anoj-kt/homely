@@ -1149,9 +1149,9 @@ li {
 /* =========================EACH FETCHED LISTING========================= */
 .icon__share {
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 12%;
-  right: 5%;
+  right: 1.5rem;
   z-index: 2;
   background-color: #ffffff;
   border-radius: 50%;
